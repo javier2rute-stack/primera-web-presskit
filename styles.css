@@ -1,0 +1,137 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111827;
+  color: #172033;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(rgba(17, 24, 39, 0.84), rgba(17, 24, 39, 0.92)),
+    url("https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1600&q=80");
+  background-position: center;
+  background-size: cover;
+}
+
+a {
+  color: inherit;
+}
+
+.press-kit {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 18px;
+}
+
+.kit-card {
+  width: min(100%, 760px);
+  padding: 28px;
+  border-top: 2px solid #172033;
+  border-bottom: 2px solid #172033;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.kit-header {
+  padding-bottom: 22px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #d8dee8;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 8vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin: 0 0 12px;
+  color: #0f766e;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+ul {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  align-items: stretch;
+  margin-bottom: 28px;
+}
+
+.photo {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #cfd7e3;
+  border-radius: 8px;
+  background: #eef2f7;
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.bio {
+  align-self: center;
+}
+
+.kit-section {
+  padding: 22px 0;
+  border-top: 1px solid #d8dee8;
+}
+
+.links-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.links-list a,
+.contact a,
+.public-link a {
+  color: #172033;
+  font-weight: 700;
+  text-decoration-color: #0f766e;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.public-link {
+  padding-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .kit-card {
+    padding: 22px;
+  }
+
+  .profile {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    min-height: 260px;
+  }
+}
