@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STITCH EPK | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="dashboard">
+  <aside class="side-rail dashboard-rail">
+    <a class="rail-brand" href="../index.html">STITCH EPK</a>
+    <a class="active" href="dashboard.html"><span class="nav-icon"></span>Dashboard</a>
+    <a href="profile.html"><span class="nav-icon"></span>Artist Profile</a>
+    <a href="#media"><span class="nav-icon"></span>Media Library</a>
+    <a href="report.html"><span class="nav-icon"></span>Analytics</a>
+    <a href="../assets/downloads/stitch-performance-summary.txt" download><span class="nav-icon"></span>Export Hub</a>
+    <div class="rail-account"><span></span><strong>Afterdark Mgmt</strong><small>Pro Account</small></div>
+  </aside>
+
+  <main class="document-shell with-rail dashboard-page">
+    <article class="a4-doc dashboard-doc reveal">
+      <header class="dashboard-header">
+        <div>
+          <p class="section-kicker">Management System</p>
+          <h1>Dashboard</h1>
+        </div>
+        <p class="mono">Page 03/04<br />Global Activity</p>
+      </header>
+
+      <div class="dashboard-grid">
+        <section class="glass-card active-epks">
+          <div class="card-heading"><h2><span class="title-icon"></span>Active EPKs</h2><button type="button" data-toast="All active EPKs loaded">View All</button></div>
+          <article class="epk-row">
+            <span class="row-icon purple">note</span>
+            <div><h3>Techno Horizon Tour</h3><p>Last updated: 2h ago</p></div>
+            <strong>1.2k<br />Views</strong><em><span></span>Live</em><button type="button" data-toast="Tour menu opened">more</button>
+          </article>
+          <article class="epk-row">
+            <span class="row-icon cyan">disc</span>
+            <div><h3>Acid Rain LP (EPK)</h3><p>Last updated: 1d ago</p></div>
+            <strong>842<br />Views</strong><em>Draft</em><button type="button" data-toast="LP menu opened">more</button>
+          </article>
+        </section>
+
+        <section id="media" class="performance-photo">
+          <div><p>In Focus</p><h2>Peak Performance</h2></div>
+        </section>
+
+        <section class="glass-card stream-card">
+          <div class="chart-title">
+            <div><h2>Stream Intensity</h2><p>Real-time listening velocity across platforms</p></div>
+            <div class="legend"><span class="purple-dot"></span>Spotify <span class="cyan-dot"></span>Apple</div>
+          </div>
+          <div class="bar-chart" data-bars>
+            <div><span style="height:48%"></span><b style="height:24%"></b><small>MON</small></div>
+            <div><span style="height:30%"></span><b style="height:60%"></b><small>TUE</small></div>
+            <div><span style="height:78%"></span><b style="height:25%"></b><small>WED</small></div>
+            <div><span style="height:36%"></span><b style="height:68%"></b><small>THU</small></div>
+            <div><span style="height:64%"></span><b style="height:54%"></b><small>FRI</small></div>
+            <div><span style="height:82%"></span><b style="height:60%"></b><small>SAT</small></div>
+          </div>
+        </section>
+
+        <section class="glass-card activity-feed">
+          <h2>Global Activity</h2>
+          <ul>
+            <li><span>down</span><p><strong>Booking Agent</strong> downloaded Press Kit Assets.<small>Berlin, DE · Just now</small></p></li>
+            <li><span>eye</span><p><strong>Universal Music</strong> viewed Tech Rider.<small>London, UK · 12m ago</small></p></li>
+            <li><span>share</span><p><strong>EPK Shared</strong> on Instagram Stories.<small>New York, US · 1h ago</small></p></li>
+            <li><span>down</span><p><strong>Festival Promoter</strong> downloaded Tech Rider.<small>Ibiza, ES · 4h ago</small></p></li>
+          </ul>
+          <button class="radar" type="button" data-toast="Global node scan refreshed">globe</button>
+        </section>
+      </div>
+
+      <footer class="doc-footer">
+        <span>&copy; 2026 STITCH DIGITAL EPK SYSTEMS</span>
+        <span class="system-status"><i></i>Systems Nominal</span>
+        <span>Encryption: AES-256</span>
+        <span>Latency: 12ms</span>
+      </footer>
+    </article>
+  </main>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="../js/script.js" defer></script>
+</body>
+</html>

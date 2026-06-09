@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STITCH EPK | Reports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="report">
+  <button class="floating-export export-btn" type="button" data-export>Export PDF</button>
+  <main class="document-shell report-page">
+    <article class="a4-doc report-doc reveal">
+      <header class="report-header">
+        <div>
+          <h1>STITCH EPK</h1>
+          <p><span>Pro Analytics Report</span> Q3 2026 Performance Data</p>
+        </div>
+        <div><strong>Afterdark Mgmt</strong><small>Client Ref: AD-9921-X</small></div>
+      </header>
+
+      <section class="metric-grid">
+        <article class="glass-card metric-card"><span>Total Reach</span><strong><b class="counter" data-target="14.2" data-suffix="M">0</b></strong><em>+12.4% MoM</em></article>
+        <article class="glass-card metric-card"><span>Avg. Engagement</span><strong><b class="counter cyan-text" data-target="8.6" data-suffix="%">0</b></strong><em>+2.1%</em></article>
+        <article class="glass-card metric-card"><span>Streaming Vol.</span><strong><b class="counter" data-target="3.8" data-suffix="M">0</b></strong><em class="down">-0.4%</em></article>
+        <article class="glass-card metric-card"><span>Press Clips</span><strong><b class="counter lime-text" data-target="42" data-suffix="">0</b></strong><em>High Impact</em></article>
+      </section>
+
+      <section class="report-section">
+        <div class="section-line"><h2><span class="title-icon"></span>Audience Growth</h2><p>Jan 2026 - Sep 2026</p></div>
+        <div class="growth-visual glass-card">
+          <svg viewBox="0 0 760 320" role="img" aria-label="Audience growth chart">
+            <defs>
+              <linearGradient id="purpleLine" x1="0" x2="1"><stop stop-color="#bd00ff"/><stop offset="1" stop-color="#ecb2ff"/></linearGradient>
+              <linearGradient id="cyanLine" x1="0" x2="1"><stop stop-color="#00eefc"/><stop offset="1" stop-color="#7df4ff"/></linearGradient>
+            </defs>
+            <path d="M30 260 L130 210 L220 190 L320 150 L420 120 L520 80 L700 45" fill="none" stroke="url(#purpleLine)" stroke-width="6"/>
+            <path d="M30 290 L130 260 L220 230 L320 170 L420 160 L520 115 L700 70" fill="none" stroke="url(#cyanLine)" stroke-width="6"/>
+            <g class="grid-lines"><path d="M30 60H730M30 120H730M30 180H730M30 240H730"/></g>
+          </svg>
+          <div class="growth-label">Total Audience Growth <strong>+145%</strong></div>
+          <div class="chart-legend"><span class="purple-dot"></span>Spotify <span class="cyan-dot"></span>Instagram</div>
+        </div>
+      </section>
+
+      <section class="geo-grid">
+        <div>
+          <h2><span class="title-icon"></span>Global Reach</h2>
+          <div class="map-card glass-card">
+            <div class="world-map"></div>
+            <div class="map-pills"><span>Primary Hub <strong>Berlin, DE</strong></span><span>Fastest Growth <strong>Seoul, KR</strong></span></div>
+          </div>
+        </div>
+        <aside class="regions">
+          <h2>Top Regions</h2>
+          <button type="button">01 United States <strong>32%</strong></button>
+          <button type="button">02 Germany <strong>18%</strong></button>
+          <button type="button">03 United Kingdom <strong>14%</strong></button>
+          <button type="button">04 Netherlands <strong>11%</strong></button>
+          <button type="button">05 Brazil <strong>9%</strong></button>
+          <div class="insight glass-card"><span>Audience Insight</span>Core demographic skewed towards 22-35 year olds with 65% mobile consumption rate during late-night hours.</div>
+        </aside>
+      </section>
+
+      <footer class="report-footer">
+        <div><strong>STITCH DIGITAL EPK SYSTEMS</strong><p>&copy; 2026 STITCH DIGITAL EPK SYSTEMS. ALL RIGHTS RESERVED. CONFIDENTIAL DATA INTENDED FOR LICENSED RECIPIENTS ONLY.</p></div>
+        <nav><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="../index.html#contact">Contact Agent</a></nav>
+        <span>Authenticated by STITCH_AUTH_NODE_09</span>
+      </footer>
+    </article>
+  </main>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="../js/script.js" defer></script>
+</body>
+</html>

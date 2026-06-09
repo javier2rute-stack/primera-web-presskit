@@ -1,268 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stitch | DJ Press Kit</title>
+  <meta name="description" content="STITCH EPK, una plataforma afterdark para construir press kits profesionales de artistas electronicos." />
+  <title>STITCH EPK | Artist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-  <div class="page-shell">
-    <header class="site-header reveal-on-scroll">
-      <a class="brand" href="#home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name">STITCH</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a class="nav-link active" href="#home">Home</a>
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#music">Music</a>
-        <a class="nav-link" href="#contact">Contact</a>
-      </nav>
-      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation"></button>
-    </header>
-
-    <div id="mobileNav" class="mobile-nav" aria-hidden="true">
-      <a class="mobile-link" href="#home">Home</a>
-      <a class="mobile-link" href="#about">About</a>
-      <a class="mobile-link" href="#music">Music</a>
-      <a class="mobile-link" href="#contact">Contact</a>
+<body data-page="artist">
+  <header class="topbar">
+    <a class="brand" href="index.html">STITCH EPK</a>
+    <nav class="topnav" aria-label="Principal">
+      <a class="active" href="index.html">Artist</a>
+      <a href="pages/profile.html">Stats</a>
+      <a href="pages/dashboard.html">Media</a>
+      <a href="pages/report.html">Reports</a>
+    </nav>
+    <div class="top-actions">
+      <button class="export-btn" type="button" data-export>Export PDF</button>
+      <button class="icon-btn" type="button" aria-label="Notifications" data-toast="Notifications checked">bell</button>
+      <button class="icon-btn" type="button" aria-label="Settings" data-toast="Settings opened">gear</button>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
     </div>
+  </header>
 
-    <main class="site-main">
-      <section id="home" class="hero section reveal-on-scroll">
-        <div class="hero-copy">
-          <span class="eyebrow">DJ / Producer</span>
-          <h1>STITCH</h1>
-          <p>High-impact electronic sets for clubs, festivals, and premium live events. Blending neon energy with cinematic atmospheres, Stitch commands the stage from first beat to final drop.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Book Now</a>
-            <a class="btn btn-secondary" href="#music">Listen</a>
-          </div>
-          <div class="hero-social">
-            <span>Follow</span>
-            <div class="social-links">
-              <a class="social-link" href="#" aria-label="Instagram">
-                <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.8"/><path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" stroke="currentColor" stroke-width="1.8"/><path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-              </a>
-              <a class="social-link" href="#" aria-label="Spotify">
-                <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9.5c3.5-2 7.5-2.1 11 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6 13.5c2.5-1.2 5.5-1.3 8 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6 17.5c1.5-.7 3.5-.8 5 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/></svg>
-              </a>
-              <a class="social-link" href="#" aria-label="YouTube">
-                <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M10 9.5l5 3-5 3V9.5z" fill="currentColor"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <a href="index.html">Artist</a>
+    <a href="pages/profile.html">Stats</a>
+    <a href="pages/dashboard.html">Media</a>
+    <a href="pages/report.html">Reports</a>
+  </nav>
 
-        <div class="hero-visual">
-          <div class="hero-visual-inner">
-            <div class="hero-badge">
-              <span></span>
-              LIVE NOW
-            </div>
-            <div class="hero-highlight"></div>
-            <div class="hero-meta-block">
-              <span>Stage Experience</span>
-              <strong>12+ Years</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="about section reveal-on-scroll">
-        <div class="section-header">
-          <span class="section-label">Biography</span>
-          <h2>Sound designed for the after-hours stage</h2>
-        </div>
-        <div class="section-copy">
-          <p>With a signature pulse that bridges deep warehouse grooves and peak-time anthems, Stitch has become a sought-after force in the electronic music scene. Every performance is engineered to create tension, release, and a sense of cinematic momentum.</p>
-          <p>Supporting top-tier lineups across Europe and North America, Stitch builds sets with precision tuning, dynamic transitions, and memorable melodies. This press kit is designed for booking agents and music directors who expect a refined, high-energy experience.</p>
-        </div>
-      </section>
-
-      <section class="tech-rider section reveal-on-scroll">
-        <div class="section-header">
-          <span class="section-label">Tech Rider</span>
-          <h2>Ready-to-use download kit</h2>
-        </div>
-        <div class="cards-grid">
-          <article class="download-card">
-            <div class="card-top">
-              <div class="card-icon card-icon-primary">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 12l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 5v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-              </div>
-              <div>
-                <p class="card-title">Artist Performance Summary</p>
-                <p class="card-subtitle">One-sheet highlights and set profile.</p>
-              </div>
-            </div>
-            <a class="card-action" href="#">Download</a>
-          </article>
-
-          <article class="download-card">
-            <div class="card-top">
-              <div class="card-icon card-icon-secondary">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 7h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 10h14v10H5V10z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <p class="card-title">Rider PDF</p>
-                <p class="card-subtitle">Technical details and backstage needs.</p>
-              </div>
-            </div>
-            <a class="card-action" href="#">Download</a>
-          </article>
-
-          <article class="download-card">
-            <div class="card-top">
-              <div class="card-icon card-icon-accent">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 15h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 11h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-              </div>
-              <div>
-                <p class="card-title">Technical Channel Routing</p>
-                <p class="card-subtitle">Channel guide for sound and monitors.</p>
-              </div>
-            </div>
-            <a class="card-action" href="#">Download</a>
-          </article>
-
-          <article class="download-card">
-            <div class="card-top">
-              <div class="card-icon card-icon-success">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5 11-11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <p class="card-title">Stage Plot</p>
-                <p class="card-subtitle">Visual layout with equipment placement.</p>
-              </div>
-            </div>
-            <a class="card-action" href="#">Download</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="statistics section reveal-on-scroll">
-        <div class="stats-grid">
-          <article class="stat-card">
-            <span class="stat-label">Monthly Listeners</span>
-            <strong>4.2M</strong>
-            <p class="stat-note">+12% growth since last month</p>
-          </article>
-          <article class="stat-card">
-            <span class="stat-label">Social Followers</span>
-            <strong>850K</strong>
-            <div class="stat-chips">
-              <span>Instagram</span>
-              <span>Spotify</span>
-              <span>YouTube</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="contact section reveal-on-scroll">
-        <div class="section-header">
-          <span class="section-label">Inquiries</span>
-          <h2>Get in touch for bookings</h2>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-copy">
-            <p>Use the form to send event details, dates, and production requests. Stitch is available for headline sets, club residencies, and international festivals.</p>
-            <div class="contact-details">
-              <div>
-                <span>Email</span>
-                <strong>bookings@artist.com</strong>
-              </div>
-              <div>
-                <span>Press</span>
-                <strong>pr@artist.com</strong>
-              </div>
-            </div>
-          </div>
-          <form class="contact-form" novalidate>
-            <div class="form-row">
-              <label>
-                Name
-                <input type="text" name="name" placeholder="Your name" required />
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" placeholder="you@email.com" required />
-              </label>
-            </div>
-            <div class="form-row">
-              <label>
-                Event / Company
-                <input type="text" name="event" placeholder="Event or company" />
-              </label>
-              <label>
-                Phone
-                <input type="tel" name="phone" placeholder="+1 555 123 987" />
-              </label>
-            </div>
-            <label class="form-full">
-              Message
-              <textarea name="message" rows="5" placeholder="Tell us about the date, location, and production needs."></textarea>
-            </label>
-            <button type="submit" class="btn btn-primary form-submit">SEND INQUIRY</button>
-          </form>
-        </div>
-      </section>
-
-      <section id="music" class="latest-release section reveal-on-scroll">
-        <div class="release-card">
-          <div class="release-artwork">
-            <div class="release-play"></div>
-          </div>
-          <div class="release-info">
-            <span class="release-tag">Featured Track / Preview</span>
-            <h3>Midnight Pulse</h3>
-            <p class="release-subtitle">Original Mix</p>
-            <div class="release-meta">
-              <span>Genre: Tech House</span>
-              <span>BPM: 125</span>
-              <span>Duration: 03:42</span>
-            </div>
-            <div class="equalizer">
-              <span class="bar bar-1"></span>
-              <span class="bar bar-2"></span>
-              <span class="bar bar-3"></span>
-              <span class="bar bar-4"></span>
-              <span class="bar bar-5"></span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer reveal-on-scroll">
-      <div class="footer-grid">
-        <div>
-          <span class="footer-label">Quick Links</span>
-          <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#music">Music</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <span class="footer-label">Streaming</span>
-          <ul class="footer-links">
-            <li><a href="#">Spotify</a></li>
-            <li><a href="#">Beatport</a></li>
-            <li><a href="#">SoundCloud</a></li>
-            <li><a href="#">Apple Music</a></li>
-          </ul>
-        </div>
+  <main class="artist-canvas reveal">
+    <section class="hero-page">
+      <div class="hero-photo" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <div class="kicker"><span></span> Premium EPK Systems</div>
+        <h1>Eleva tu Carrera con un <strong>EPK Letal</strong></h1>
+        <p>La primera impresion es la unica que cuenta en la industria. Presentamos STITCH: la plataforma definitiva de gestion de talento disenada para la elite de la musica electronica.</p>
       </div>
-      <div class="footer-note">© 2026 Stitch Music • Press Kit</div>
-    </footer>
-  </div>
+      <div class="vertical-mark">AFTERDARK MANAGEMENT</div>
+      <div class="feature-grid">
+        <article class="glass-card feature-card">
+          <span class="feature-icon purple">bolt</span>
+          <h2>Velocity</h2>
+          <p>Carga instantanea y optimizacion total.</p>
+        </article>
+        <article class="glass-card feature-card">
+          <span class="feature-icon cyan">seal</span>
+          <h2>Pro Status</h2>
+          <p>Estetica de vanguardia para agencias top-tier.</p>
+        </article>
+        <article class="glass-card feature-card">
+          <span class="feature-icon lime">eye</span>
+          <h2>Visibility</h2>
+          <p>Analiticas en tiempo real de quien ve tu kit.</p>
+        </article>
+        <article class="glass-card feature-card">
+          <span class="feature-icon light">check</span>
+          <h2>Ready</h2>
+          <p>Exportacion PDF en un clic. Siempre listo.</p>
+        </article>
+      </div>
+    </section>
 
+    <section id="music" class="music-strip reveal-on-scroll">
+      <div>
+        <p class="section-kicker">Featured Preview</p>
+        <h2>Midnight Pulse</h2>
+        <p>Original Mix · 125 BPM · 03:42</p>
+      </div>
+      <button class="play-large" type="button" data-audio-toggle aria-label="Play preview"></button>
+      <div class="equalizer" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-panel reveal-on-scroll">
+      <div>
+        <p class="section-kicker">Contact Agent</p>
+        <h2>Booking ready pipeline</h2>
+        <p>Envianos fechas, ciudad y requisitos de produccion. El formulario valida campos y queda listo para integrarse con backend.</p>
+      </div>
+      <form class="contact-form glass-card" novalidate data-form>
+        <label>Name<input name="name" type="text" autocomplete="name" required /><span class="field-error" data-error-for="name"></span></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required /><span class="field-error" data-error-for="email"></span></label>
+        <label>Event<input name="event" type="text" required /><span class="field-error" data-error-for="event"></span></label>
+        <label>Message<textarea name="message" rows="4" minlength="20" required></textarea><span class="field-error" data-error-for="message"></span></label>
+        <button class="primary-btn" type="submit">Send Inquiry</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>STITCH</strong>
+      <p>&copy; 2026 STITCH DIGITAL EPK SYSTEMS. ALL RIGHTS RESERVED.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="pages/terms.html">Terms of Service</a>
+      <a href="pages/privacy.html">Privacy Policy</a>
+      <a href="#contact">Contact Agent</a>
+      <a href="https://open.spotify.com/" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://soundcloud.com/" target="_blank" rel="noopener">SoundCloud</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.beatport.com/" target="_blank" rel="noopener">Beatport</a>
+      <a href="https://music.apple.com/" target="_blank" rel="noopener">Apple Music</a>
+    </nav>
+    <div class="system-status"><span></span>System Online</div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
   <script src="js/script.js" defer></script>
 </body>
 </html>

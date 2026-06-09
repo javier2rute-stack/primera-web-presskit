@@ -1,0 +1,8 @@
+STITCH EPK - Technical Channel Routing
+
+CH 01/02: CDJ-3000 Deck A stereo
+CH 03/04: CDJ-3000 Deck B stereo
+CH 05/06: CDJ-3000 Deck C stereo
+CH 07/08: CDJ-3000 Deck D stereo
+Booth: Stereo monitor send
+Record: Stereo master record out

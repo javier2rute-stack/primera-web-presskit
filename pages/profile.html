@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STITCH EPK | Artist Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="profile">
+  <header class="topbar">
+    <a class="brand" href="../index.html">STITCH EPK</a>
+    <nav class="topnav" aria-label="Principal">
+      <a href="../index.html">Artist</a>
+      <a class="active" href="profile.html">Stats</a>
+      <a href="dashboard.html">Media</a>
+      <a href="report.html">Reports</a>
+    </nav>
+    <div class="top-actions">
+      <button class="export-btn" type="button" data-export>Export PDF</button>
+      <button class="icon-btn" type="button" aria-label="Notifications" data-toast="Notifications checked">bell</button>
+      <button class="icon-btn" type="button" aria-label="Settings" data-toast="Settings opened">gear</button>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
+    </div>
+  </header>
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <a href="../index.html">Artist</a>
+    <a href="profile.html">Stats</a>
+    <a href="dashboard.html">Media</a>
+    <a href="report.html">Reports</a>
+  </nav>
+
+  <aside class="side-rail">
+    <div class="rail-title">Afterdark<br />Management<span>Pro Account</span></div>
+    <a href="dashboard.html"><span class="nav-icon"></span>Dashboard</a>
+    <a class="active" href="profile.html"><span class="nav-icon"></span>Artist Profile</a>
+    <a href="dashboard.html#media"><span class="nav-icon"></span>Media Library</a>
+    <a href="report.html"><span class="nav-icon"></span>Analytics</a>
+    <a href="../assets/downloads/stitch-rider.txt" download><span class="nav-icon"></span>Export Hub</a>
+    <button type="button" data-toast="New EPK draft created">+ New EPK</button>
+    <small>Support<br />Sign Out</small>
+  </aside>
+
+  <main class="document-shell with-rail">
+    <article class="a4-doc profile-doc reveal">
+      <header class="doc-header">
+        <div>
+          <p class="lime mono">EPK BUILDER // PAGE 02</p>
+          <h1>Artist Profile &amp; Identity</h1>
+          <p>Phase 2: Defining the core brand essence, digital connectivity, and technical operational requirements.</p>
+        </div>
+        <div class="doc-ref">Reference ID<strong>ST-992-B</strong></div>
+      </header>
+
+      <section class="dj-console">
+        <div class="status-chip"><span></span>Production Ready</div>
+      </section>
+
+      <div class="profile-grid">
+        <section class="glass-card identity-card">
+          <h2><span class="title-icon"></span>Identity</h2>
+          <label>Artistic Name <input value="VANTABLACK" data-autosave /></label>
+          <div class="two-col">
+            <label>Primary Genre <input value="Industrial Techno" data-autosave /></label>
+            <label>Origin <input value="Berlin, DE" data-autosave /></label>
+          </div>
+          <label>Official Bio (Short)<textarea data-autosave rows="5">A master of atmospheric tension and industrial rhythm. Since 2018, Vantablack has carved a niche in the underground circuit with a sound defined by obsidian-dark soundscapes and unrelenting 140 BPM drive.</textarea></label>
+        </section>
+
+        <section class="glass-card rider-card">
+          <h2><span class="title-icon"></span>Technical Rider</h2>
+          <div class="rider-list">
+            <button type="button" data-toast="Mixing desk item selected"><span>Mixing Desk</span>Pioneer DJM-V10 (x1)</button>
+            <button type="button" data-toast="Playback item selected"><span>Playback</span>Pioneer CDJ-3000 (x4)</button>
+            <button type="button" data-toast="Monitoring item selected"><span>Monitoring</span>D&amp;B Audiotechnik (Stereo)</button>
+            <button type="button" data-toast="Connectivity item selected"><span>Connectivity</span>LAN Switch / Pro Link Setup</button>
+          </div>
+          <a class="secondary-btn full" href="../assets/downloads/stitch-rider.txt" download>View Full Rider</a>
+        </section>
+
+        <section class="glass-card ecosystem-card">
+          <h2><span class="title-icon"></span>Connected Ecosystem</h2>
+          <div class="integration-grid">
+            <a href="https://open.spotify.com/" target="_blank" rel="noopener">Spotify Artist API <span>ok</span></a>
+            <a href="https://soundcloud.com/" target="_blank" rel="noopener">SoundCloud Pro <span>ok</span></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram Insights <span>ok</span></a>
+            <a class="muted" href="https://ra.co/" target="_blank" rel="noopener">Resident Advisor <span>off</span></a>
+          </div>
+        </section>
+
+        <section class="glass-card progress-card">
+          <h2>Completion Progress</h2>
+          <div class="progress"><span style="width:45%"></span></div>
+          <div class="progress-meta"><span>2 / 4 pages finished</span><span>45% total</span></div>
+          <div class="button-row">
+            <a class="secondary-btn" href="../index.html">Back</a>
+            <a class="primary-btn" href="dashboard.html">Next Phase</a>
+          </div>
+        </section>
+      </div>
+
+      <footer class="doc-footer">
+        <span>STITCH DIGITAL EPK SYSTEMS v4.2.0<br />ENCRYPTED SECURE BUILD ENVIRONMENT</span>
+        <span>DOCUMENT STATUS: DRAFT_INTERNAL<br />&copy; 2026 ALL RIGHTS RESERVED</span>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer compact">
+    <strong>STITCH EPK</strong>
+    <span>&copy; 2026 STITCH DIGITAL EPK SYSTEMS. ALL RIGHTS RESERVED.</span>
+    <nav><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="../index.html#contact">Contact Agent</a></nav>
+  </footer>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="../js/script.js" defer></script>
+</body>
+</html>
