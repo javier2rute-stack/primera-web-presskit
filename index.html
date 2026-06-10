@@ -3,120 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="STITCH EPK, una plataforma afterdark para construir press kits profesionales de artistas electronicos." />
-  <title>STITCH EPK | Artist</title>
+  <meta name="description" content="Plantilla profesional para crear Press Kits de DJs con editor, vista previa A4 y guardado local." />
+  <title>PRESS KIT PRO DJ | Builder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body data-page="artist">
-  <header class="topbar">
-    <a class="brand" href="index.html">STITCH EPK</a>
+<body>
+  <header class="topbar no-print">
+    <button class="brand-btn" type="button" data-nav="home">PRESS KIT<br />PRO DJ</button>
     <nav class="topnav" aria-label="Principal">
-      <a class="active" href="index.html">Artist</a>
-      <a href="pages/profile.html">Stats</a>
-      <a href="pages/dashboard.html">Media</a>
-      <a href="pages/report.html">Reports</a>
+      <button class="active" type="button" data-nav="home">Artista</button>
+      <button type="button" data-nav="editor">Estadisticas</button>
+      <button type="button" data-nav="media">Media</button>
+      <button type="button" data-nav="report">Informes</button>
     </nav>
     <div class="top-actions">
-      <button class="export-btn" type="button" data-export>Export PDF</button>
-      <button class="icon-btn" type="button" aria-label="Notifications" data-toast="Notifications checked">bell</button>
-      <button class="icon-btn" type="button" aria-label="Settings" data-toast="Settings opened">gear</button>
-      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
+      <button class="locale-btn" type="button" data-action="toggle-locale">◎ ES⌄</button>
+      <button class="primary-btn small" type="button" data-action="print">Exportar PDF</button>
+      <button class="icon-btn" type="button" data-action="notify" aria-label="Notificaciones">⌁</button>
+      <button class="icon-btn" type="button" data-action="settings" aria-label="Ajustes">⚙</button>
+      <button class="menu-btn" type="button" data-action="menu" aria-label="Abrir menu"><span></span></button>
     </div>
   </header>
 
-  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
-    <a href="index.html">Artist</a>
-    <a href="pages/profile.html">Stats</a>
-    <a href="pages/dashboard.html">Media</a>
-    <a href="pages/report.html">Reports</a>
+  <nav class="mobile-menu no-print" aria-label="Movil">
+    <button type="button" data-nav="home">Artista</button>
+    <button type="button" data-nav="editor">Editor</button>
+    <button type="button" data-nav="dashboard">Panel</button>
+    <button type="button" data-nav="preview">Vista previa</button>
+    <button type="button" data-nav="report">Informe</button>
   </nav>
 
-  <main class="artist-canvas reveal">
-    <section class="hero-page">
-      <div class="hero-photo" aria-hidden="true"></div>
-      <div class="hero-shade" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <div class="kicker"><span></span> Premium EPK Systems</div>
-        <h1>Eleva tu Carrera con un <strong>EPK Letal</strong></h1>
-        <p>La primera impresion es la unica que cuenta en la industria. Presentamos STITCH: la plataforma definitiva de gestion de talento disenada para la elite de la musica electronica.</p>
-      </div>
-      <div class="vertical-mark">AFTERDARK MANAGEMENT</div>
-      <div class="feature-grid">
-        <article class="glass-card feature-card">
-          <span class="feature-icon purple">bolt</span>
-          <h2>Velocity</h2>
-          <p>Carga instantanea y optimizacion total.</p>
-        </article>
-        <article class="glass-card feature-card">
-          <span class="feature-icon cyan">seal</span>
-          <h2>Pro Status</h2>
-          <p>Estetica de vanguardia para agencias top-tier.</p>
-        </article>
-        <article class="glass-card feature-card">
-          <span class="feature-icon lime">eye</span>
-          <h2>Visibility</h2>
-          <p>Analiticas en tiempo real de quien ve tu kit.</p>
-        </article>
-        <article class="glass-card feature-card">
-          <span class="feature-icon light">check</span>
-          <h2>Ready</h2>
-          <p>Exportacion PDF en un clic. Siempre listo.</p>
-        </article>
-      </div>
+  <aside class="side-rail no-print">
+    <h2>Afterdark<br />Management <span>Cuenta Pro</span></h2>
+    <button class="active" type="button" data-nav="dashboard"><span>▦</span> Panel de Control</button>
+    <button type="button" data-nav="editor"><span>▣</span> Perfil del Artista</button>
+    <button type="button" data-nav="media"><span>▧</span> Biblioteca Media</button>
+    <button type="button" data-nav="report"><span>⌁</span> Analiticas</button>
+    <button type="button" data-nav="preview"><span>▤</span> Centro de Exportacion</button>
+    <button class="rail-new" type="button" data-action="new-epk">+ Nuevo EPK</button>
+    <button class="rail-link" type="button" data-action="help">? Soporte</button>
+    <button class="rail-link" type="button" data-action="signout">⇥ Cerrar Sesion</button>
+  </aside>
+
+  <main class="app-shell">
+    <section class="view active" data-view="home">
+      <article class="cover-page a4-page">
+        <div class="hero-image" data-preview-bg></div>
+        <div class="hero-overlay"></div>
+        <div class="cover-content">
+          <p class="kicker"><span></span> Premium EPK Systems</p>
+          <h1>Eleva tu Carrera con un <strong>Press Kit Pro</strong></h1>
+          <p class="lead">La primera impresion es la unica que cuenta en la industria. Crea un press kit profesional, editable y listo para agencias, clubs y festivales.</p>
+          <div class="feature-grid">
+            <button class="glass-card feature-card" type="button" data-nav="editor"><span>ϟ</span><strong>Velocidad</strong><small>Carga instantanea y optimizacion total.</small></button>
+            <button class="glass-card feature-card" type="button" data-nav="preview"><span>◈</span><strong>Estado Pro</strong><small>Documento A4 premium para agencias top-tier.</small></button>
+            <button class="glass-card feature-card" type="button" data-nav="report"><span>◎</span><strong>Visibilidad</strong><small>Analiticas y actividad profesional del kit.</small></button>
+            <button class="glass-card feature-card" type="button" data-action="print"><span>⌄</span><strong>Descargar</strong><small>Exportacion PDF en un clic. Siempre listo.</small></button>
+          </div>
+        </div>
+        <div class="vertical-mark">AFTERDARK MANAGEMENT</div>
+        <footer class="cover-footer">
+          <strong>PRESS KIT PRO DJ</strong>
+          <a href="pages/terms.html">Terminos del Servicio</a>
+          <a href="pages/privacy.html">Politica de Privacidad</a>
+          <button type="button" data-nav="editor">Contactar Agente</button>
+          <span class="status-dot">Sistema Online</span>
+        </footer>
+      </article>
     </section>
 
-    <section id="music" class="music-strip reveal-on-scroll">
-      <div>
-        <p class="section-kicker">Featured Preview</p>
-        <h2>Midnight Pulse</h2>
-        <p>Original Mix · 125 BPM · 03:42</p>
-      </div>
-      <button class="play-large" type="button" data-audio-toggle aria-label="Play preview"></button>
-      <div class="equalizer" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
+    <section class="view" data-view="dashboard">
+      <article class="a4-page dashboard-page">
+        <header class="page-head">
+          <div>
+            <p class="kicker cyan">Sistema de Gestion</p>
+            <h2>PRESS KIT PRO DJ - PANEL DE GESTION</h2>
+          </div>
+          <p class="page-ref">Pagina<br />03/04<br /><span>Actividad Global</span></p>
+        </header>
+        <div class="dashboard-grid">
+          <section class="glass-card panel-card">
+            <div class="card-title"><h3>◇ EPKs Activos</h3><button type="button" data-action="view-all">Ver Todo</button></div>
+            <div id="epkRows" class="row-stack"></div>
+          </section>
+          <section class="focus-photo">
+            <div><p>En Foco</p><h3>Rendimiento Maximo</h3></div>
+          </section>
+          <section class="glass-card chart-card">
+            <div class="card-title"><h3>Intensidad de Reproduccion</h3><span><i></i>Spotify <b></b>Apple</span></div>
+            <div class="bar-chart" id="barChart"></div>
+          </section>
+          <section class="glass-card activity-card">
+            <h3>Feed de Actividad Global</h3>
+            <div id="activityFeed" class="activity-feed"></div>
+            <button class="radar-btn" type="button" data-action="scan">◎</button>
+          </section>
+        </div>
+        <footer class="doc-meta"><span>© 2026 PRESS KIT PRO DJ SYSTEMS</span><span class="status-dot">Sistemas Nominales</span><span>Encriptacion: AES-256</span><span>Latencia: 12ms</span></footer>
+      </article>
     </section>
 
-    <section id="contact" class="contact-panel reveal-on-scroll">
-      <div>
-        <p class="section-kicker">Contact Agent</p>
-        <h2>Booking ready pipeline</h2>
-        <p>Envianos fechas, ciudad y requisitos de produccion. El formulario valida campos y queda listo para integrarse con backend.</p>
-      </div>
-      <form class="contact-form glass-card" novalidate data-form>
-        <label>Name<input name="name" type="text" autocomplete="name" required /><span class="field-error" data-error-for="name"></span></label>
-        <label>Email<input name="email" type="email" autocomplete="email" required /><span class="field-error" data-error-for="email"></span></label>
-        <label>Event<input name="event" type="text" required /><span class="field-error" data-error-for="event"></span></label>
-        <label>Message<textarea name="message" rows="4" minlength="20" required></textarea><span class="field-error" data-error-for="message"></span></label>
-        <button class="primary-btn" type="submit">Send Inquiry</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
+    <section class="view" data-view="editor">
+      <form class="a4-page editor-page" id="artistForm" novalidate>
+        <header class="page-head">
+          <div>
+            <p class="kicker lime">Constructor EPK // Pagina 02</p>
+            <h2>PERFIL DEL ARTISTA Y RIDER TECNICO</h2>
+            <p>Define identidad, conectividad digital y materiales operativos. Todo se guarda automaticamente.</p>
+          </div>
+          <p class="page-ref">ID de Referencia<br /><span data-bind="refId"></span><br />PRESS KIT PRO DJ</p>
+        </header>
+
+        <section class="hero-uploader" data-preview-bg>
+          <label class="upload-control no-print">Cambiar foto<input type="file" id="photoInput" accept="image/*" /></label>
+          <span class="status-chip">● Listo para produccion</span>
+        </section>
+
+        <div class="editor-grid">
+          <section class="glass-card form-card">
+            <h3>◉ Identidad</h3>
+            <label>Nombre artistico<input name="artistName" required minlength="2" /></label>
+            <div class="two-col">
+              <label>Genero musical<input name="genre" required /></label>
+              <label>Ubicacion<input name="location" required /></label>
+            </div>
+            <label>Biografia<textarea name="bio" rows="6" required minlength="40"></textarea></label>
+            <div class="error-box" data-errors></div>
+          </section>
+
+          <section class="glass-card form-card rider-card">
+            <h3>▥ Rider Tecnico</h3>
+            <div id="riderList" class="item-list"></div>
+            <button class="secondary-btn" type="button" data-add="rider">+ Anadir rider</button>
+          </section>
+
+          <section class="glass-card form-card">
+            <h3>⌁ Redes Sociales</h3>
+            <div class="two-col">
+              <label>Instagram<input name="instagram" type="url" placeholder="https://instagram.com/..." /></label>
+              <label>Spotify<input name="spotify" type="url" placeholder="https://open.spotify.com/..." /></label>
+              <label>SoundCloud<input name="soundcloud" type="url" placeholder="https://soundcloud.com/..." /></label>
+              <label>YouTube<input name="youtube" type="url" placeholder="https://youtube.com/..." /></label>
+            </div>
+          </section>
+
+          <section class="glass-card progress-card">
+            <h3>Progreso de Completado</h3>
+            <div class="progress"><span id="progressBar"></span></div>
+            <p><span id="progressText">0%</span> total</p>
+            <div class="button-row">
+              <button class="secondary-btn" type="button" data-nav="home">Volver</button>
+              <button class="primary-btn" type="button" data-action="save">Guardar cambios</button>
+            </div>
+            <button class="secondary-btn wide" type="button" data-action="edit-all">Editar secciones</button>
+          </section>
+        </div>
       </form>
+    </section>
+
+    <section class="view" data-view="media">
+      <article class="a4-page media-page">
+        <header class="page-head">
+          <div><p class="kicker cyan">Biblioteca Media</p><h2>GALERIA, VIDEOS, DISCOGRAFIA Y EVENTOS</h2></div>
+          <button class="primary-btn no-print" type="button" data-action="save">Guardar cambios</button>
+        </header>
+        <div class="media-grid">
+          <section class="glass-card collection-card"><h3>Galeria de Fotos</h3><div id="galleryList" class="item-list tiles"></div><button class="secondary-btn" type="button" data-add="gallery">+ Anadir foto</button></section>
+          <section class="glass-card collection-card"><h3>Videos</h3><div id="videoList" class="item-list"></div><button class="secondary-btn" type="button" data-add="videos">+ Anadir video</button></section>
+          <section class="glass-card collection-card"><h3>Discografia</h3><div id="discographyList" class="item-list"></div><button class="secondary-btn" type="button" data-add="discography">+ Anadir lanzamiento</button></section>
+          <section class="glass-card collection-card"><h3>Proximos Eventos</h3><div id="eventsList" class="item-list"></div><button class="secondary-btn" type="button" data-add="events">+ Anadir evento</button></section>
+          <section class="glass-card collection-card wide"><h3>Contacto Profesional</h3><label>Email de booking<input name="bookingEmail" type="email" form="artistForm" /></label><label>Telefono / WhatsApp<input name="phone" form="artistForm" /></label></section>
+          <section class="glass-card collection-card wide"><h3>Secciones Personalizadas</h3><div id="customSectionsList" class="item-list"></div><button class="secondary-btn" type="button" data-add="customSections">+ Anadir nueva seccion</button></section>
+        </div>
+      </article>
+    </section>
+
+    <section class="view" data-view="preview">
+      <article class="a4-page preview-page" id="printArea">
+        <header class="preview-header">
+          <div><p>PRESS KIT PRO DJ</p><h2 data-bind="artistName"></h2><span data-bind="genre"></span></div>
+          <button class="primary-btn no-print" type="button" data-action="print">Exportar PDF</button>
+        </header>
+        <section class="preview-hero" data-preview-bg><span class="status-chip">● Disponible para booking</span></section>
+        <section class="preview-bio glass-card">
+          <h3>Biografia Oficial</h3>
+          <p data-bind="bio"></p>
+        </section>
+        <div class="preview-grid">
+          <section class="glass-card"><h3>Identidad</h3><p><strong>Ubicacion:</strong> <span data-bind="location"></span></p><p><strong>Genero:</strong> <span data-bind="genre"></span></p></section>
+          <section class="glass-card"><h3>Redes</h3><div id="socialPreview" class="link-stack"></div></section>
+          <section class="glass-card"><h3>Discografia</h3><div id="discographyPreview" class="compact-list"></div></section>
+          <section class="glass-card"><h3>Eventos</h3><div id="eventsPreview" class="compact-list"></div></section>
+          <section class="glass-card wide"><h3>Contacto Profesional</h3><p data-bind="bookingEmail"></p><p data-bind="phone"></p></section>
+        </div>
+      </article>
+    </section>
+
+    <section class="view" data-view="report">
+      <article class="a4-page report-page">
+        <header class="report-head"><div><h2>PRESS KIT PRO DJ</h2><p><span>Reporte de Analisis Pro</span> Q3 2026 Datos de Rendimiento</p></div><strong>AFTERDARK MGMT<br /><small>Ref Cliente: AD-9921-X</small></strong></header>
+        <section class="metric-grid">
+          <article class="glass-card metric"><span>Alcance total</span><strong>14.2M</strong><em>↗ +12.4% MoM</em></article>
+          <article class="glass-card metric"><span>Interaccion media</span><strong class="cyan-text">8.6%</strong><em>↗ +2.1%</em></article>
+          <article class="glass-card metric"><span>Volumen streaming</span><strong>3.8M</strong><em class="down">↘ -0.4%</em></article>
+          <article class="glass-card metric"><span>Clips de prensa</span><strong class="lime-text">42</strong><em>⊕ Alto impacto</em></article>
+        </section>
+        <section class="growth-section"><h3>↗ Crecimiento de Audiencia</h3><div class="growth-card glass-card"><svg viewBox="0 0 800 330" aria-label="Grafico de crecimiento"><path d="M50 260 L170 215 L290 180 L410 130 L530 105 L650 55 L760 35" /><path class="cyan-line" d="M50 292 L170 255 L290 230 L410 175 L530 150 L650 92 L760 60" /></svg><span>Spotify</span><b>Instagram</b></div></section>
+        <section class="geo-grid"><div><h3>◉ Mapa de Calor Global</h3><div class="map-card glass-card"><div class="map-points"></div><span>Global Reach: Live Data</span><p><b>Berlin, DE</b><b>Seul, KR</b></p></div></div><aside><h3>Regiones Principales</h3><div id="regionList" class="regions"></div><div class="glass-card insight"><strong>Insight de Audiencia</strong><p>Demografia principal inclinada hacia jovenes de 22-35 anos con 65% de consumo movil durante la noche.</p></div></aside></section>
+        <footer class="report-footer"><p><strong>PRESS KIT PRO DJ SYSTEMS</strong><br />Datos confidenciales destinados a destinatarios autorizados.</p><button type="button" data-action="print">Exportar PDF</button></footer>
+      </article>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div>
-      <strong>STITCH</strong>
-      <p>&copy; 2026 STITCH DIGITAL EPK SYSTEMS. ALL RIGHTS RESERVED.</p>
-    </div>
-    <nav aria-label="Footer">
-      <a href="pages/terms.html">Terms of Service</a>
-      <a href="pages/privacy.html">Privacy Policy</a>
-      <a href="#contact">Contact Agent</a>
-      <a href="https://open.spotify.com/" target="_blank" rel="noopener">Spotify</a>
-      <a href="https://soundcloud.com/" target="_blank" rel="noopener">SoundCloud</a>
-      <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.beatport.com/" target="_blank" rel="noopener">Beatport</a>
-      <a href="https://music.apple.com/" target="_blank" rel="noopener">Apple Music</a>
-    </nav>
-    <div class="system-status"><span></span>System Online</div>
-  </footer>
+  <dialog class="modal no-print" id="itemDialog">
+    <form method="dialog" id="itemForm">
+      <h3 id="dialogTitle">Editar elemento</h3>
+      <label>Titulo<input name="title" required /></label>
+      <label>Detalle<textarea name="detail" rows="4"></textarea></label>
+      <menu><button class="secondary-btn" type="button" data-action="close-dialog">Cancelar</button><button class="primary-btn" value="save">Guardar</button></menu>
+    </form>
+  </dialog>
 
-  <div class="toast" role="status" aria-live="polite"></div>
+  <div class="toast no-print" role="status" aria-live="polite"></div>
   <script src="js/script.js" defer></script>
 </body>
 </html>
