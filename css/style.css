@@ -19,6 +19,8 @@
   --body: "Hanken Grotesk", system-ui, sans-serif;
   --mono: "JetBrains Mono", monospace;
   --shadow: 0 0 60px rgba(0,0,0,.65);
+  --image-hero: url("../assets/images/stitch-hero-male-dj.png");
+  --image-profile: url("../assets/images/stitch-profile-female-dj.png");
 }
 
 * { box-sizing: border-box; }
@@ -617,6 +619,95 @@ input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3p
   transition: .2s ease;
 }
 .toast.show { opacity: 1; transform: none; }
+
+/* Real Stitch image integration. These rules intentionally override older CSS-only
+   visual fallbacks so every visual area uses local image assets from the ZIP. */
+.hero-image,
+.preview-hero {
+  background-image: var(--image-hero);
+  background-size: cover;
+  background-position: center top;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.hero-uploader {
+  background-image: var(--image-profile);
+  background-size: cover;
+  background-position: center 42%;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.focus-photo,
+.growth-card,
+.map-card {
+  background-image: var(--image-profile);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.growth-card,
+.map-card {
+  isolation: isolate;
+}
+
+.growth-card::before,
+.map-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(19, 11, 22, .62);
+  border: 0;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+}
+
+.growth-card > *,
+.map-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image::before,
+.hero-image::after,
+.preview-hero::before,
+.preview-hero::after,
+.focus-photo::before {
+  display: none;
+}
+
+.photo-item .thumb {
+  background-image: var(--image-profile);
+  background-size: cover;
+  background-position: center;
+}
+
+.photo-item:nth-child(even) .thumb {
+  background-image: var(--image-hero);
+  background-position: center top;
+}
+
+.feature-card:nth-child(2),
+.feature-card:nth-child(4) {
+  background-image: var(--image-profile);
+  background-size: cover;
+  background-position: center;
+}
+
+.feature-card:nth-child(2)::before,
+.feature-card:nth-child(4)::before {
+  background: rgba(19, 11, 22, .72);
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.feature-card > * {
+  position: relative;
+  z-index: 1;
+}
 
 @media (max-width: 1120px) {
   .topbar { grid-template-columns: auto 1fr auto; }
