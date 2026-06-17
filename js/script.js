@@ -103,6 +103,64 @@ const translations = {
   }
 };
 
+const sharedExtra = {
+  "actions.help": "Soporte", "actions.signout": "Cerrar Sesion", "actions.cancel": "Cancelar", "actions.saveShort": "Guardar", "actions.edit": "Editar", "actions.delete": "Eliminar",
+  "footer.terms": "Terminos del Servicio", "footer.privacy": "Politica de Privacidad", "footer.contact": "Contactar Agente", "footer.online": "Sistema Online",
+  "home.kicker": "Premium EPK Systems", "dashboard.kicker": "Sistema de Gestion", "dashboard.activity": "Actividad Global", "dashboard.activeEpks": "EPKs Activos", "dashboard.focus": "En Foco", "dashboard.peak": "Rendimiento Maximo", "dashboard.nominal": "Sistemas Nominales", "dashboard.encryption": "Encriptacion: AES-256", "dashboard.latency": "Latencia: 12ms",
+  "doc.page": "Pagina", "doc.ref": "ID de Referencia", "editor.kicker": "Constructor EPK // Pagina 02", "editor.productionReady": "Listo para produccion", "media.kicker": "Biblioteca Media", "field.bookingEmail": "Email de booking", "field.phone": "Telefono / WhatsApp", "field.locationColon": "Ubicacion:", "field.genreColon": "Genero:",
+  "preview.available": "Disponible para booking", "report.period": "Q3 2026 Datos de Rendimiento", "report.clientRef": "Ref Cliente: AD-9921-X", "report.liveData": "Global Reach: Live Data", "report.insightTitle": "Insight de Audiencia", "report.insight": "Demografia principal inclinada hacia jovenes de 22-35 anos con 65% de consumo movil durante la noche.", "report.confidential": "Datos confidenciales destinados a destinatarios autorizados.",
+  "metric.reach": "Alcance total", "metric.engagement": "Interaccion media", "metric.streaming": "Volumen streaming", "metric.press": "Clips de prensa", "metric.impact": "Alto impacto",
+  "dialog.edit": "Editar elemento", "dialog.add": "Anadir", "dialog.title": "Titulo", "dialog.detail": "Detalle",
+  "placeholder.instagram": "https://instagram.com/tu-artista", "placeholder.spotify": "https://open.spotify.com/artist/...", "placeholder.soundcloud": "https://soundcloud.com/tu-artista", "placeholder.youtube": "https://youtube.com/@tu-artista", "placeholder.bookingEmail": "booking@agencia.com", "placeholder.phone": "+34 600 000 000",
+  "validation.artistName": "El nombre artistico debe tener al menos 2 caracteres.", "validation.genre": "Indica el genero musical.", "validation.location": "Indica la ubicacion.", "validation.bio": "La biografia debe tener al menos 40 caracteres.", "validation.email": "El email de booking no parece valido.", "validation.url": "{field} debe empezar por http:// o https://.",
+  "toast.saved": "Cambios guardados correctamente", "toast.needsReview": "Revisa los campos marcados", "toast.added": "Elemento anadido", "toast.updated": "Elemento actualizado", "toast.deleted": "Elemento eliminado", "toast.new": "Nuevo EPK creado", "toast.print": "Abriendo dialogo de impresion / PDF", "toast.settings": "Ajustes abiertos: edita el perfil desde la seccion Editor", "toast.notify": "Sin notificaciones pendientes. Sistema online.", "toast.help": "Soporte: revisa contacto profesional en Media", "toast.signout": "Sesion local cerrada. Los datos siguen guardados en este navegador.", "toast.scan": "Analiticas actualizadas", "toast.photoType": "Selecciona una imagen valida", "toast.photoUpdated": "Foto principal actualizada", "toast.lang": "Idioma cambiado: {lang}",
+  "dashboard.updated": "Actualizado automaticamente", "dashboard.draft": "Borrador operativo", "dashboard.live": "Vivo", "dashboard.draftStatus": "Borrador", "dashboard.releaseFallback": "Nuevo lanzamiento",
+  "feed.agent": "Agente de Reservas descargo activos de Press Kit.", "feed.universal": "Universal Music vio el Tech Rider.", "feed.shared": "EPK compartido en Instagram Stories.", "feed.promoter": "Promotor de Festival descargo el Tech Rider.", "feed.now": "Berlin, DE - Ahora mismo", "feed.london": "Londres, UK - hace 12m", "feed.newyork": "Nueva York, US - hace 1h", "feed.ibiza": "Ibiza, ES - hace 4h"
+};
+
+Object.assign(translations.es, sharedExtra);
+Object.assign(translations.en, {
+  ...sharedExtra,
+  "actions.help": "Support", "actions.signout": "Sign out", "actions.cancel": "Cancel", "actions.saveShort": "Save", "actions.edit": "Edit", "actions.delete": "Delete",
+  "footer.terms": "Terms of Service", "footer.privacy": "Privacy Policy", "footer.contact": "Contact Agent", "footer.online": "System Online",
+  "dashboard.kicker": "Management System", "dashboard.activity": "Global Activity", "dashboard.activeEpks": "Active EPKs", "dashboard.focus": "In Focus", "dashboard.peak": "Peak Performance", "dashboard.nominal": "Systems Nominal", "dashboard.encryption": "Encryption: AES-256", "dashboard.latency": "Latency: 12ms",
+  "doc.page": "Page", "doc.ref": "Reference ID", "editor.kicker": "EPK Builder // Page 02", "editor.productionReady": "Production ready", "media.kicker": "Media Library", "field.bookingEmail": "Booking email", "field.phone": "Phone / WhatsApp", "field.locationColon": "Location:", "field.genreColon": "Genre:",
+  "preview.available": "Available for booking", "report.period": "Q3 2026 Performance Data", "report.clientRef": "Client Ref: AD-9921-X", "report.insightTitle": "Audience Insight", "report.insight": "Core demographic leans toward 22-35 year olds with 65% mobile consumption at night.", "report.confidential": "Confidential data intended for authorized recipients.",
+  "metric.reach": "Total reach", "metric.engagement": "Average engagement", "metric.streaming": "Streaming volume", "metric.press": "Press clips", "metric.impact": "High impact",
+  "dialog.edit": "Edit item", "dialog.add": "Add", "dialog.title": "Title", "dialog.detail": "Detail",
+  "validation.artistName": "Artist name must have at least 2 characters.", "validation.genre": "Enter the music genre.", "validation.location": "Enter the location.", "validation.bio": "Biography must have at least 40 characters.", "validation.email": "Booking email does not look valid.", "validation.url": "{field} must start with http:// or https://.",
+  "toast.saved": "Changes saved successfully", "toast.needsReview": "Review the highlighted fields", "toast.added": "Item added", "toast.updated": "Item updated", "toast.deleted": "Item deleted", "toast.new": "New EPK created", "toast.print": "Opening print / PDF dialog", "toast.settings": "Settings opened: edit the profile from Editor", "toast.notify": "No pending notifications. System online.", "toast.help": "Support: check professional contact in Media", "toast.signout": "Local session closed. Data remains saved in this browser.", "toast.scan": "Analytics refreshed", "toast.photoType": "Select a valid image", "toast.photoUpdated": "Main photo updated", "toast.lang": "Language changed: {lang}",
+  "dashboard.updated": "Updated automatically", "dashboard.draft": "Operational draft", "dashboard.live": "Live", "dashboard.draftStatus": "Draft", "dashboard.releaseFallback": "New release",
+  "feed.agent": "Booking Agent downloaded Press Kit assets.", "feed.universal": "Universal Music viewed the Tech Rider.", "feed.shared": "EPK shared on Instagram Stories.", "feed.promoter": "Festival promoter downloaded the Tech Rider.", "feed.now": "Berlin, DE - Just now", "feed.london": "London, UK - 12m ago", "feed.newyork": "New York, US - 1h ago", "feed.ibiza": "Ibiza, ES - 4h ago"
+});
+Object.assign(translations.fr, {
+  ...translations.en, ...translations.fr,
+  "actions.help": "Support", "actions.signout": "Deconnexion", "actions.cancel": "Annuler", "actions.saveShort": "Enregistrer", "actions.edit": "Modifier", "actions.delete": "Supprimer",
+  "footer.terms": "Conditions de service", "footer.privacy": "Politique de confidentialite", "footer.contact": "Contacter agent", "footer.online": "Systeme en ligne",
+  "dashboard.kicker": "Systeme de gestion", "dashboard.activity": "Activite globale", "dashboard.activeEpks": "EPKs actifs", "dashboard.focus": "En focus", "dashboard.peak": "Performance maximale",
+  "doc.page": "Page", "doc.ref": "ID de reference", "editor.kicker": "Constructeur EPK // Page 02", "editor.productionReady": "Pret pour production", "media.kicker": "Bibliotheque media", "field.bookingEmail": "Email booking", "field.phone": "Telephone / WhatsApp",
+  "preview.available": "Disponible pour booking", "metric.reach": "Portee totale", "metric.engagement": "Interaction moyenne", "metric.streaming": "Volume streaming", "metric.press": "Clips presse", "metric.impact": "Fort impact",
+  "dialog.edit": "Modifier element", "dialog.add": "Ajouter", "dialog.title": "Titre", "dialog.detail": "Detail", "toast.saved": "Modifications enregistrees", "toast.needsReview": "Verifiez les champs marques"
+});
+Object.assign(translations.de, {
+  ...translations.en, ...translations.de,
+  "actions.help": "Support", "actions.signout": "Abmelden", "actions.cancel": "Abbrechen", "actions.saveShort": "Speichern", "actions.edit": "Bearbeiten", "actions.delete": "Loeschen",
+  "footer.terms": "Nutzungsbedingungen", "footer.privacy": "Datenschutz", "footer.contact": "Agent kontaktieren", "footer.online": "System online",
+  "dashboard.kicker": "Managementsystem", "dashboard.activity": "Globale Aktivitaet", "dashboard.activeEpks": "Aktive EPKs", "dashboard.focus": "Im Fokus", "dashboard.peak": "Maximale Leistung",
+  "doc.page": "Seite", "doc.ref": "Referenz-ID", "editor.kicker": "EPK Builder // Seite 02", "editor.productionReady": "Produktionsbereit", "media.kicker": "Medienbibliothek", "field.bookingEmail": "Booking E-Mail", "field.phone": "Telefon / WhatsApp",
+  "preview.available": "Fuer Booking verfuegbar", "metric.reach": "Gesamtreichweite", "metric.engagement": "Durchschnittliches Engagement", "metric.streaming": "Streaming-Volumen", "metric.press": "Presseclips", "metric.impact": "Hohe Wirkung",
+  "dialog.edit": "Element bearbeiten", "dialog.add": "Hinzufuegen", "dialog.title": "Titel", "dialog.detail": "Detail", "toast.saved": "Aenderungen gespeichert", "toast.needsReview": "Markierte Felder pruefen"
+});
+Object.assign(translations.it, {
+  ...translations.en, ...translations.it,
+  "actions.help": "Supporto", "actions.signout": "Esci", "actions.cancel": "Annulla", "actions.saveShort": "Salva", "actions.edit": "Modifica", "actions.delete": "Elimina",
+  "footer.terms": "Termini di servizio", "footer.privacy": "Privacy policy", "footer.contact": "Contatta agente", "footer.online": "Sistema online",
+  "dashboard.kicker": "Sistema di gestione", "dashboard.activity": "Attivita globale", "dashboard.activeEpks": "EPK attivi", "dashboard.focus": "In evidenza", "dashboard.peak": "Massima performance",
+  "doc.page": "Pagina", "doc.ref": "ID riferimento", "editor.kicker": "Builder EPK // Pagina 02", "editor.productionReady": "Pronto per produzione", "media.kicker": "Libreria media", "field.bookingEmail": "Email booking", "field.phone": "Telefono / WhatsApp",
+  "preview.available": "Disponibile per booking", "metric.reach": "Copertura totale", "metric.engagement": "Interazione media", "metric.streaming": "Volume streaming", "metric.press": "Clip stampa", "metric.impact": "Alto impatto",
+  "dialog.edit": "Modifica elemento", "dialog.add": "Aggiungi", "dialog.title": "Titolo", "dialog.detail": "Dettaglio", "toast.saved": "Modifiche salvate", "toast.needsReview": "Controlla i campi evidenziati"
+});
+
 let state = loadState();
 let activeView = "home";
 let editing = null;
@@ -134,6 +192,15 @@ function showToast(message) {
   toast.classList.add("show");
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
+}
+
+function t(key, replacements = {}) {
+  const lang = translations[state.lang] ? state.lang : "es";
+  let value = translations[lang][key] || translations.es[key] || key;
+  Object.entries(replacements).forEach(([name, replacement]) => {
+    value = value.replace(`{${name}}`, replacement);
+  });
+  return value;
 }
 
 function navigate(view) {
@@ -170,20 +237,24 @@ function applyLanguage() {
     const value = dict[node.dataset.i18nHtml] || es[node.dataset.i18nHtml];
     if (value) node.innerHTML = value;
   });
+  $$("[data-i18n-placeholder]").forEach((node) => {
+    const value = dict[node.dataset.i18nPlaceholder] || es[node.dataset.i18nPlaceholder];
+    if (value) node.setAttribute("placeholder", value);
+  });
   const localeButton = $(".locale-btn");
   if (localeButton) localeButton.textContent = `${lang.toUpperCase()} v`;
-  $$(".locale-menu [data-lang]").forEach((button) => button.classList.toggle("active", button.dataset.lang === lang));
+  $$("[data-lang]").forEach((button) => button.classList.toggle("active", button.dataset.lang === lang));
 }
 
 function validateForm() {
   const errors = [];
-  if (!state.artistName || state.artistName.trim().length < 2) errors.push("El nombre artistico debe tener al menos 2 caracteres.");
-  if (!state.genre) errors.push("Indica el genero musical.");
-  if (!state.location) errors.push("Indica la ubicacion.");
-  if (!state.bio || state.bio.trim().length < 40) errors.push("La biografia debe tener al menos 40 caracteres.");
-  if (state.bookingEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.bookingEmail)) errors.push("El email de booking no parece valido.");
+  if (!state.artistName || state.artistName.trim().length < 2) errors.push(t("validation.artistName"));
+  if (!state.genre) errors.push(t("validation.genre"));
+  if (!state.location) errors.push(t("validation.location"));
+  if (!state.bio || state.bio.trim().length < 40) errors.push(t("validation.bio"));
+  if (state.bookingEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.bookingEmail)) errors.push(t("validation.email"));
   ["instagram", "spotify", "soundcloud", "youtube"].forEach((key) => {
-    if (state[key] && !/^https?:\/\//i.test(state[key])) errors.push(`${key} debe empezar por http:// o https://.`);
+    if (state[key] && !/^https?:\/\//i.test(state[key])) errors.push(t("validation.url", { field: label(key) }));
   });
   const box = $("[data-errors]");
   if (box) box.innerHTML = errors.map((error) => `<p>${error}</p>`).join("");
@@ -265,8 +336,8 @@ function renderEditableList(targetId, key) {
       ${key === "gallery" ? `<span class="thumb" aria-hidden="true"></span>` : ""}
       <div><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.detail)}</small></div>
       <div class="row-actions">
-        <button class="mini-btn" type="button" data-edit="${key}" data-index="${index}">Editar</button>
-        <button class="mini-btn danger" type="button" data-delete="${key}" data-index="${index}">Eliminar</button>
+        <button class="mini-btn" type="button" data-edit="${key}" data-index="${index}">${t("actions.edit")}</button>
+        <button class="mini-btn danger" type="button" data-delete="${key}" data-index="${index}">${t("actions.delete")}</button>
       </div>
     </article>
   `).join("");
@@ -276,8 +347,8 @@ function renderDashboard() {
   const epks = $("#epkRows");
   if (epks) {
     epks.innerHTML = [
-      { icon: "M", title: `${state.artistName} Main EPK`, detail: "Actualizado automaticamente", views: "1.2k", status: "Vivo" },
-      { icon: "D", title: state.discography[0]?.title || "Nuevo lanzamiento", detail: "Borrador operativo", views: "842", status: "Borrador" }
+      { icon: "M", title: `${state.artistName} Main EPK`, detail: t("dashboard.updated"), views: "1.2k", status: t("dashboard.live") },
+      { icon: "D", title: state.discography[0]?.title || t("dashboard.releaseFallback"), detail: t("dashboard.draft"), views: "842", status: t("dashboard.draftStatus") }
     ].map((row) => `
       <article class="epk-row">
         <i>${row.icon}</i>
@@ -296,10 +367,10 @@ function renderDashboard() {
   const feed = $("#activityFeed");
   if (feed) {
     feed.innerHTML = [
-      ["DL", "Agente de Reservas descargo activos de Press Kit.", "Berlin, DE - Ahora mismo"],
-      ["ON", "Universal Music vio el Tech Rider.", "Londres, UK - hace 12m"],
-      ["SH", "EPK compartido en Instagram Stories.", "Nueva York, US - hace 1h"],
-      ["DL", "Promotor de Festival descargo el Tech Rider.", "Ibiza, ES - hace 4h"]
+      ["DL", t("feed.agent"), t("feed.now")],
+      ["ON", t("feed.universal"), t("feed.london")],
+      ["SH", t("feed.shared"), t("feed.newyork")],
+      ["DL", t("feed.promoter"), t("feed.ibiza")]
     ].map(([icon, title, detail]) => `<article class="activity-item"><span>${icon}</span><div><strong>${title}</strong><small>${detail}</small></div></article>`).join("");
   }
 }
@@ -322,7 +393,7 @@ function renderProgress() {
 function openItemDialog(key, index = null) {
   editing = { key, index };
   const item = index === null ? { title: "", detail: "" } : state[key][index];
-  $("#dialogTitle").textContent = index === null ? `Anadir ${label(key)}` : `Editar ${label(key)}`;
+  $("#dialogTitle").textContent = index === null ? `${t("dialog.add")} ${label(key)}` : `${t("actions.edit")} ${label(key)}`;
   $("#itemForm").elements.title.value = item.title;
   $("#itemForm").elements.detail.value = item.detail;
   $("#itemDialog").showModal();
@@ -335,24 +406,24 @@ function saveDialogItem() {
   if (!title) return;
   if (editing.index === null) state[editing.key].push({ title, detail });
   else state[editing.key][editing.index] = { title, detail };
-  saveState(editing.index === null ? "Elemento anadido" : "Elemento actualizado");
+  saveState(editing.index === null ? t("toast.added") : t("toast.updated"));
 }
 
 function deleteItem(key, index) {
   state[key].splice(index, 1);
-  saveState("Elemento eliminado");
+  saveState(t("toast.deleted"));
 }
 
 function newEpk() {
   state = { ...defaults, refId: `ST-${Math.floor(Math.random() * 900 + 100)}-${String.fromCharCode(65 + Math.floor(Math.random() * 26))}` };
   bindForm();
-  saveState("Nuevo EPK creado");
+  saveState(t("toast.new"));
   navigate("editor");
 }
 
 function printActive() {
   $$(".view").forEach((view) => view.classList.toggle("printing", view.dataset.view === activeView));
-  showToast("Abriendo dialogo de impresion / PDF");
+  showToast(t("toast.print"));
   setTimeout(() => window.print(), 220);
 }
 
@@ -376,10 +447,10 @@ document.addEventListener("click", (event) => {
   if (langButton) {
     state.lang = langButton.dataset.lang;
     persistQuietly();
-    applyLanguage();
+    render();
     $(".locale-picker")?.classList.remove("open");
     $(".locale-btn")?.setAttribute("aria-expanded", "false");
-    showToast(`Idioma cambiado: ${langButton.textContent}`);
+    showToast(t("toast.lang", { lang: langButton.textContent }));
     return;
   }
 
@@ -406,19 +477,19 @@ document.addEventListener("click", (event) => {
   if (action === "print") printActive();
   if (action === "save") {
     const errors = validateForm();
-    if (errors.length) showToast("Revisa los campos marcados");
-    else saveState("Cambios guardados correctamente");
+    if (errors.length) showToast(t("toast.needsReview"));
+    else saveState(t("toast.saved"));
   }
   if (action === "new-epk") newEpk();
-  if (action === "settings") showToast("Ajustes abiertos: edita el perfil desde la seccion Editor");
-  if (action === "notify") showToast("Sin notificaciones pendientes. Sistema online.");
-  if (action === "help") showToast("Soporte: revisa contacto profesional en Media");
-  if (action === "signout") showToast("Sesion local cerrada. Los datos siguen guardados en este navegador.");
+  if (action === "settings") showToast(t("toast.settings"));
+  if (action === "notify") showToast(t("toast.notify"));
+  if (action === "help") showToast(t("toast.help"));
+  if (action === "signout") showToast(t("toast.signout"));
   if (action === "close-dialog") $("#itemDialog")?.close();
   if (action === "view-all") navigate("preview");
   if (action === "scan") {
     $$(".bar span, .bar b").forEach((bar) => { bar.style.height = `${Math.floor(Math.random() * 70) + 20}%`; });
-    showToast("Analiticas actualizadas");
+    showToast(t("toast.scan"));
   }
   if (action === "edit-all") navigate("media");
 });
@@ -440,13 +511,13 @@ $("#photoInput")?.addEventListener("change", (event) => {
   const file = event.target.files?.[0];
   if (!file) return;
   if (!file.type.startsWith("image/")) {
-    showToast("Selecciona una imagen valida");
+    showToast(t("toast.photoType"));
     return;
   }
   const reader = new FileReader();
   reader.onload = () => {
     state.photo = reader.result;
-    saveState("Foto principal actualizada");
+    saveState(t("toast.photoUpdated"));
   };
   reader.readAsDataURL(file);
 });
