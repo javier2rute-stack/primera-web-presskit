@@ -65,9 +65,42 @@ const en = {
 };
 const translations = {
   es, en,
-  fr: { ...en, "nav.artist": "Artiste", "nav.editor": "Editeur", "nav.reports": "Rapports", "actions.save": "Enregistrer", "actions.export": "Exporter PDF" },
-  de: { ...en, "nav.artist": "Kunstler", "nav.reports": "Berichte", "actions.save": "Speichern", "actions.export": "PDF exportieren" },
-  it: { ...en, "nav.artist": "Artista", "nav.reports": "Report", "actions.save": "Salva", "actions.export": "Esporta PDF" }
+  fr: {
+    "nav.artist": "Artiste", "nav.editor": "Editeur", "nav.media": "Media", "nav.reports": "Rapports", "nav.preview": "Apercu",
+    "rail.dashboard": "Tableau de bord", "rail.profile": "Profil artiste", "rail.media": "Bibliotheque media", "rail.analytics": "Analytique", "rail.export": "Centre export",
+    "actions.export": "Exporter PDF", "actions.new": "+ Nouvel EPK", "actions.viewAll": "Tout voir", "actions.changePhoto": "Changer photo", "actions.addRider": "+ Ajouter rider", "actions.back": "Retour", "actions.save": "Enregistrer", "actions.editSections": "Modifier sections", "actions.addPhoto": "+ Ajouter photo", "actions.addVideo": "+ Ajouter video", "actions.addRelease": "+ Ajouter sortie", "actions.addEvent": "+ Ajouter evenement", "actions.addSection": "+ Ajouter section",
+    "home.title": "Elevez votre carriere avec un <strong>Press Kit Pro</strong>", "home.lead": "La premiere impression compte dans l'industrie. Creez un press kit professionnel, editable et pret pour agences, clubs et festivals.",
+    "feature.speed": "Vitesse", "feature.speedText": "Chargement instantane et optimisation totale.", "feature.pro": "Statut Pro", "feature.proText": "Document A4 premium pour agences top-tier.", "feature.visibility": "Visibilite", "feature.visibilityText": "Analytique et activite professionnelle du kit.", "feature.download": "Telecharger", "feature.downloadText": "Export PDF en un clic. Toujours pret.",
+    "dashboard.title": "PRESS KIT PRO DJ - TABLEAU DE GESTION", "dashboard.stream": "Intensite de lecture", "dashboard.feed": "Flux d'activite global",
+    "editor.title": "PROFIL ARTISTE ET RIDER TECHNIQUE", "editor.subtitle": "Definissez identite, connectivite numerique et materiels operationnels. Tout est sauvegarde automatiquement.", "editor.identity": "Identite", "editor.rider": "Rider Technique", "editor.socials": "Reseaux sociaux", "editor.progress": "Progression",
+    "field.artistName": "Nom d'artiste", "field.genre": "Genre musical", "field.location": "Localisation", "field.bio": "Biographie",
+    "media.title": "GALERIE, VIDEOS, DISCOGRAPHIE ET EVENEMENTS", "media.gallery": "Galerie photos", "media.videos": "Videos", "media.discography": "Discographie", "media.events": "Evenements a venir", "media.contact": "Contact professionnel", "media.custom": "Sections personnalisees",
+    "preview.bio": "Biographie officielle", "report.badge": "Rapport analytique pro", "report.growth": "Croissance audience", "report.map": "Carte thermique globale", "report.regions": "Regions principales"
+  },
+  de: {
+    "nav.artist": "Kuenstler", "nav.editor": "Editor", "nav.media": "Media", "nav.reports": "Berichte", "nav.preview": "Vorschau",
+    "rail.dashboard": "Dashboard", "rail.profile": "Kuenstlerprofil", "rail.media": "Medienbibliothek", "rail.analytics": "Analysen", "rail.export": "Exportzentrum",
+    "actions.export": "PDF exportieren", "actions.new": "+ Neues EPK", "actions.viewAll": "Alle sehen", "actions.changePhoto": "Foto wechseln", "actions.addRider": "+ Rider hinzufuegen", "actions.back": "Zurueck", "actions.save": "Speichern", "actions.editSections": "Sektionen bearbeiten", "actions.addPhoto": "+ Foto hinzufuegen", "actions.addVideo": "+ Video hinzufuegen", "actions.addRelease": "+ Release hinzufuegen", "actions.addEvent": "+ Event hinzufuegen", "actions.addSection": "+ Sektion hinzufuegen",
+    "home.title": "Steigere deine Karriere mit einem <strong>Pro Press Kit</strong>", "home.lead": "Der erste Eindruck zaehlt. Erstelle ein professionelles, editierbares Press Kit fuer Agenturen, Clubs und Festivals.",
+    "feature.speed": "Geschwindigkeit", "feature.speedText": "Sofortiges Laden und volle Optimierung.", "feature.pro": "Pro Status", "feature.proText": "Premium A4 Dokument fuer Top-Agenturen.", "feature.visibility": "Sichtbarkeit", "feature.visibilityText": "Analysen und professionelle Kit-Aktivitaet.", "feature.download": "Download", "feature.downloadText": "PDF Export mit einem Klick. Immer bereit.",
+    "dashboard.title": "PRESS KIT PRO DJ - MANAGEMENT PANEL", "dashboard.stream": "Wiedergabe-Intensitaet", "dashboard.feed": "Globaler Aktivitaetsfeed",
+    "editor.title": "KUENSTLERPROFIL UND TECHNISCHER RIDER", "editor.subtitle": "Definiere Identitaet, digitale Konnektivitaet und operative Materialien. Alles wird automatisch gespeichert.", "editor.identity": "Identitaet", "editor.rider": "Technischer Rider", "editor.socials": "Soziale Netzwerke", "editor.progress": "Fortschritt",
+    "field.artistName": "Kuenstlername", "field.genre": "Musikgenre", "field.location": "Standort", "field.bio": "Biografie",
+    "media.title": "GALERIE, VIDEOS, DISKOGRAFIE UND EVENTS", "media.gallery": "Fotogalerie", "media.videos": "Videos", "media.discography": "Diskografie", "media.events": "Naechste Events", "media.contact": "Professioneller Kontakt", "media.custom": "Eigene Sektionen",
+    "preview.bio": "Offizielle Biografie", "report.badge": "Pro Analysebericht", "report.growth": "Publikumswachstum", "report.map": "Globale Heatmap", "report.regions": "Top Regionen"
+  },
+  it: {
+    "nav.artist": "Artista", "nav.editor": "Editor", "nav.media": "Media", "nav.reports": "Report", "nav.preview": "Anteprima",
+    "rail.dashboard": "Pannello", "rail.profile": "Profilo artista", "rail.media": "Libreria media", "rail.analytics": "Analitiche", "rail.export": "Centro export",
+    "actions.export": "Esporta PDF", "actions.new": "+ Nuovo EPK", "actions.viewAll": "Vedi tutto", "actions.changePhoto": "Cambia foto", "actions.addRider": "+ Aggiungi rider", "actions.back": "Indietro", "actions.save": "Salva", "actions.editSections": "Modifica sezioni", "actions.addPhoto": "+ Aggiungi foto", "actions.addVideo": "+ Aggiungi video", "actions.addRelease": "+ Aggiungi release", "actions.addEvent": "+ Aggiungi evento", "actions.addSection": "+ Aggiungi sezione",
+    "home.title": "Porta la tua carriera piu in alto con un <strong>Press Kit Pro</strong>", "home.lead": "La prima impressione conta. Crea un press kit professionale, modificabile e pronto per agenzie, club e festival.",
+    "feature.speed": "Velocita", "feature.speedText": "Caricamento immediato e ottimizzazione totale.", "feature.pro": "Stato Pro", "feature.proText": "Documento A4 premium per agenzie top-tier.", "feature.visibility": "Visibilita", "feature.visibilityText": "Analitiche e attivita professionale del kit.", "feature.download": "Scarica", "feature.downloadText": "Export PDF in un clic. Sempre pronto.",
+    "dashboard.title": "PRESS KIT PRO DJ - PANNELLO DI GESTIONE", "dashboard.stream": "Intensita di riproduzione", "dashboard.feed": "Feed attivita globale",
+    "editor.title": "PROFILO ARTISTA E RIDER TECNICO", "editor.subtitle": "Definisci identita, connettivita digitale e materiali operativi. Tutto viene salvato automaticamente.", "editor.identity": "Identita", "editor.rider": "Rider Tecnico", "editor.socials": "Social network", "editor.progress": "Avanzamento",
+    "field.artistName": "Nome artistico", "field.genre": "Genere musicale", "field.location": "Posizione", "field.bio": "Biografia",
+    "media.title": "GALLERIA, VIDEO, DISCOGRAFIA ED EVENTI", "media.gallery": "Galleria foto", "media.videos": "Video", "media.discography": "Discografia", "media.events": "Prossimi eventi", "media.contact": "Contatto professionale", "media.custom": "Sezioni personalizzate",
+    "preview.bio": "Biografia ufficiale", "report.badge": "Report analitico pro", "report.growth": "Crescita pubblico", "report.map": "Mappa calore globale", "report.regions": "Regioni principali"
+  }
 };
 
 let state = loadState();
@@ -228,7 +261,8 @@ function renderEditableList(targetId, key) {
   const target = $(`#${targetId}`);
   if (!target) return;
   target.innerHTML = (state[key] || []).map((item, index) => `
-    <article class="list-item">
+    <article class="list-item ${key === "gallery" ? "photo-item" : ""}">
+      ${key === "gallery" ? `<span class="thumb" aria-hidden="true"></span>` : ""}
       <div><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.detail)}</small></div>
       <div class="row-actions">
         <button class="mini-btn" type="button" data-edit="${key}" data-index="${index}">Editar</button>
