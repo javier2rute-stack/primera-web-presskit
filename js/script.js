@@ -1,8 +1,10 @@
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
-const storageKey = "press-kit-pro-dj:v1";
+const storageKey = "press-kit-pro-dj:v2";
+const legacyStorageKey = "press-kit-pro-dj:v1";
 
 const defaults = {
+  lang: "es",
   refId: "ST-992-B",
   artistName: "VANTABLACK",
   genre: "Techno Industrial",
@@ -25,9 +27,7 @@ const defaults = {
     { title: "Press photo 01", detail: "Retrato principal en alta resolucion" },
     { title: "Live booth", detail: "Foto de cabina para promotores" }
   ],
-  videos: [
-    { title: "Boiler Room style set", detail: "https://youtube.com/watch?v=demo" }
-  ],
+  videos: [{ title: "Boiler Room style set", detail: "https://youtube.com/watch?v=demo" }],
   discography: [
     { title: "Acid Rain LP", detail: "2026 - Afterdark Records" },
     { title: "Midnight Pulse", detail: "Original Mix - 125 BPM" }
@@ -36,9 +36,38 @@ const defaults = {
     { title: "15 Jun - Berlin", detail: "Tresor, Alemania" },
     { title: "22 Jun - Ibiza", detail: "Afterdark Warehouse" }
   ],
-  customSections: [
-    { title: "Hospitality", detail: "Agua, toallas, green room seguro y contacto local de produccion." }
-  ]
+  customSections: [{ title: "Hospitality", detail: "Agua, toallas, green room seguro y contacto local de produccion." }]
+};
+
+const es = {
+  "nav.artist": "Artista", "nav.editor": "Editor", "nav.media": "Media", "nav.reports": "Informes", "nav.preview": "Vista previa",
+  "rail.dashboard": "Panel de Control", "rail.profile": "Perfil del Artista", "rail.media": "Biblioteca Media", "rail.analytics": "Analiticas", "rail.export": "Centro de Exportacion",
+  "actions.export": "Exportar PDF", "actions.new": "+ Nuevo EPK", "actions.viewAll": "Ver Todo", "actions.changePhoto": "Cambiar foto", "actions.addRider": "+ Anadir rider", "actions.back": "Volver", "actions.save": "Guardar cambios", "actions.editSections": "Editar secciones", "actions.addPhoto": "+ Anadir foto", "actions.addVideo": "+ Anadir video", "actions.addRelease": "+ Anadir lanzamiento", "actions.addEvent": "+ Anadir evento", "actions.addSection": "+ Anadir nueva seccion",
+  "home.title": "Eleva tu Carrera con un <strong>Press Kit Pro</strong>", "home.lead": "La primera impresion es la unica que cuenta en la industria. Crea un press kit profesional, editable y listo para agencias, clubs y festivales.",
+  "feature.speed": "Velocidad", "feature.speedText": "Carga instantanea y optimizacion total.", "feature.pro": "Estado Pro", "feature.proText": "Documento A4 premium para agencias top-tier.", "feature.visibility": "Visibilidad", "feature.visibilityText": "Analiticas y actividad profesional del kit.", "feature.download": "Descargar", "feature.downloadText": "Exportacion PDF en un clic. Siempre listo.",
+  "dashboard.title": "PRESS KIT PRO DJ - PANEL DE GESTION", "dashboard.stream": "Intensidad de Reproduccion", "dashboard.feed": "Feed de Actividad Global",
+  "editor.title": "PERFIL DEL ARTISTA Y RIDER TECNICO", "editor.subtitle": "Define identidad, conectividad digital y materiales operativos. Todo se guarda automaticamente.", "editor.identity": "Identidad", "editor.rider": "Rider Tecnico", "editor.socials": "Redes Sociales", "editor.progress": "Progreso de Completado",
+  "field.artistName": "Nombre artistico", "field.genre": "Genero musical", "field.location": "Ubicacion", "field.bio": "Biografia",
+  "media.title": "GALERIA, VIDEOS, DISCOGRAFIA Y EVENTOS", "media.gallery": "Galeria de Fotos", "media.videos": "Videos", "media.discography": "Discografia", "media.events": "Proximos Eventos", "media.contact": "Contacto Profesional", "media.custom": "Secciones Personalizadas",
+  "preview.bio": "Biografia Oficial", "report.badge": "Reporte de Analisis Pro", "report.growth": "Crecimiento de Audiencia", "report.map": "Mapa de Calor Global", "report.regions": "Regiones Principales"
+};
+const en = {
+  "nav.artist": "Artist", "nav.editor": "Editor", "nav.media": "Media", "nav.reports": "Reports", "nav.preview": "Preview",
+  "rail.dashboard": "Dashboard", "rail.profile": "Artist Profile", "rail.media": "Media Library", "rail.analytics": "Analytics", "rail.export": "Export Center",
+  "actions.export": "Export PDF", "actions.new": "+ New EPK", "actions.viewAll": "View All", "actions.changePhoto": "Change photo", "actions.addRider": "+ Add rider", "actions.back": "Back", "actions.save": "Save changes", "actions.editSections": "Edit sections", "actions.addPhoto": "+ Add photo", "actions.addVideo": "+ Add video", "actions.addRelease": "+ Add release", "actions.addEvent": "+ Add event", "actions.addSection": "+ Add section",
+  "home.title": "Raise your career with a <strong>Pro Press Kit</strong>", "home.lead": "First impressions matter in the industry. Build a professional, editable press kit ready for agencies, clubs and festivals.",
+  "feature.speed": "Speed", "feature.speedText": "Instant loading and full optimization.", "feature.pro": "Pro Status", "feature.proText": "Premium A4 document for top-tier agencies.", "feature.visibility": "Visibility", "feature.visibilityText": "Analytics and professional kit activity.", "feature.download": "Download", "feature.downloadText": "PDF export in one click. Always ready.",
+  "dashboard.title": "PRESS KIT PRO DJ - MANAGEMENT PANEL", "dashboard.stream": "Playback Intensity", "dashboard.feed": "Global Activity Feed",
+  "editor.title": "ARTIST PROFILE AND TECHNICAL RIDER", "editor.subtitle": "Define identity, digital connectivity and operational materials. Everything autosaves.", "editor.identity": "Identity", "editor.rider": "Technical Rider", "editor.socials": "Social Networks", "editor.progress": "Completion Progress",
+  "field.artistName": "Artist name", "field.genre": "Music genre", "field.location": "Location", "field.bio": "Biography",
+  "media.title": "GALLERY, VIDEOS, DISCOGRAPHY AND EVENTS", "media.gallery": "Photo Gallery", "media.videos": "Videos", "media.discography": "Discography", "media.events": "Upcoming Events", "media.contact": "Professional Contact", "media.custom": "Custom Sections",
+  "preview.bio": "Official Biography", "report.badge": "Pro Analytics Report", "report.growth": "Audience Growth", "report.map": "Global Heat Map", "report.regions": "Top Regions"
+};
+const translations = {
+  es, en,
+  fr: { ...en, "nav.artist": "Artiste", "nav.editor": "Editeur", "nav.reports": "Rapports", "actions.save": "Enregistrer", "actions.export": "Exporter PDF" },
+  de: { ...en, "nav.artist": "Kunstler", "nav.reports": "Berichte", "actions.save": "Speichern", "actions.export": "PDF exportieren" },
+  it: { ...en, "nav.artist": "Artista", "nav.reports": "Report", "actions.save": "Salva", "actions.export": "Esporta PDF" }
 };
 
 let state = loadState();
@@ -48,14 +77,19 @@ let toastTimer;
 
 function loadState() {
   try {
-    return { ...defaults, ...(JSON.parse(localStorage.getItem(storageKey)) || {}) };
+    const saved = JSON.parse(localStorage.getItem(storageKey) || localStorage.getItem(legacyStorageKey) || "null");
+    return { ...defaults, ...(saved || {}) };
   } catch {
     return { ...defaults };
   }
 }
 
-function saveState(message = "Cambios guardados") {
+function persistQuietly() {
   localStorage.setItem(storageKey, JSON.stringify(state));
+}
+
+function saveState(message = "Cambios guardados") {
+  persistQuietly();
   render();
   showToast(message);
 }
@@ -79,7 +113,6 @@ function navigate(view) {
 
 function bindForm() {
   const form = $("#artistForm");
-  if (!form) return;
   $$("input[name], textarea[name]").forEach((field) => {
     if (field.form !== form && field.getAttribute("form") !== "artistForm") return;
     field.value = state[field.name] || "";
@@ -89,16 +122,27 @@ function bindForm() {
       renderDynamicOnly();
     });
   });
-  form.addEventListener("submit", (event) => event.preventDefault());
+  form?.addEventListener("submit", (event) => event.preventDefault());
 }
 
-function persistQuietly() {
-  localStorage.setItem(storageKey, JSON.stringify(state));
+function applyLanguage() {
+  const lang = translations[state.lang] ? state.lang : "es";
+  const dict = translations[lang];
+  document.documentElement.lang = lang;
+  $$("[data-i18n]").forEach((node) => {
+    const value = dict[node.dataset.i18n] || es[node.dataset.i18n];
+    if (value) node.textContent = value;
+  });
+  $$("[data-i18n-html]").forEach((node) => {
+    const value = dict[node.dataset.i18nHtml] || es[node.dataset.i18nHtml];
+    if (value) node.innerHTML = value;
+  });
+  const localeButton = $(".locale-btn");
+  if (localeButton) localeButton.textContent = `${lang.toUpperCase()} v`;
+  $$(".locale-menu [data-lang]").forEach((button) => button.classList.toggle("active", button.dataset.lang === lang));
 }
 
 function validateForm() {
-  const form = $("#artistForm");
-  const box = $("[data-errors]");
   const errors = [];
   if (!state.artistName || state.artistName.trim().length < 2) errors.push("El nombre artistico debe tener al menos 2 caracteres.");
   if (!state.genre) errors.push("Indica el genero musical.");
@@ -108,8 +152,8 @@ function validateForm() {
   ["instagram", "spotify", "soundcloud", "youtube"].forEach((key) => {
     if (state[key] && !/^https?:\/\//i.test(state[key])) errors.push(`${key} debe empezar por http:// o https://.`);
   });
+  const box = $("[data-errors]");
   if (box) box.innerHTML = errors.map((error) => `<p>${error}</p>`).join("");
-  if (form) form.classList.toggle("has-errors", errors.length > 0);
   return errors;
 }
 
@@ -121,6 +165,7 @@ function completion() {
 }
 
 function render() {
+  applyLanguage();
   renderBindings();
   renderLists();
   renderDashboard();
@@ -137,8 +182,7 @@ function renderDynamicOnly() {
 
 function renderBindings() {
   $$("[data-bind]").forEach((node) => {
-    const value = state[node.dataset.bind] || "";
-    node.textContent = value;
+    node.textContent = state[node.dataset.bind] || "";
   });
   const social = $("#socialPreview");
   if (social) {
@@ -154,16 +198,20 @@ function renderBindings() {
 function renderPreviewList(id, items) {
   const target = $(`#${id}`);
   if (!target) return;
-  target.innerHTML = items.map((item) => `<p><strong>${escapeHtml(item.title)}</strong><br /><span>${escapeHtml(item.detail)}</span></p>`).join("");
+  target.innerHTML = items.map((item) => `<p><strong>${escapeHtml(item.title)}</strong><br><span>${escapeHtml(item.detail)}</span></p>`).join("");
 }
 
 function renderPhoto() {
   $$("[data-preview-bg]").forEach((node) => {
-    node.style.backgroundImage = state.photo
-      ? `linear-gradient(90deg, rgba(19,11,22,.95) 0 18%, rgba(19,11,22,.45)), linear-gradient(0deg, #150b17 0 10%, transparent 40%), url("${state.photo}")`
-      : "";
-    node.style.backgroundSize = state.photo ? "cover" : "";
-    node.style.backgroundPosition = state.photo ? "center" : "";
+    if (!state.photo) {
+      node.style.backgroundImage = "";
+      node.style.backgroundSize = "";
+      node.style.backgroundPosition = "";
+      return;
+    }
+    node.style.backgroundImage = `linear-gradient(90deg, rgba(19,11,22,.95) 0 18%, rgba(19,11,22,.45)), linear-gradient(0deg, #150b17 0 10%, transparent 40%), url("${state.photo}")`;
+    node.style.backgroundSize = "cover";
+    node.style.backgroundPosition = "center";
   });
 }
 
@@ -179,8 +227,7 @@ function renderLists() {
 function renderEditableList(targetId, key) {
   const target = $(`#${targetId}`);
   if (!target) return;
-  const items = state[key] || [];
-  target.innerHTML = items.map((item, index) => `
+  target.innerHTML = (state[key] || []).map((item, index) => `
     <article class="list-item">
       <div><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(item.detail)}</small></div>
       <div class="row-actions">
@@ -195,8 +242,8 @@ function renderDashboard() {
   const epks = $("#epkRows");
   if (epks) {
     epks.innerHTML = [
-      { icon: "♪", title: `${state.artistName} Main EPK`, detail: "Actualizado automaticamente", views: "1.2k", status: "Vivo" },
-      { icon: "◎", title: state.discography[0]?.title || "Nuevo lanzamiento", detail: "Borrador operativo", views: "842", status: "Borrador" }
+      { icon: "M", title: `${state.artistName} Main EPK`, detail: "Actualizado automaticamente", views: "1.2k", status: "Vivo" },
+      { icon: "D", title: state.discography[0]?.title || "Nuevo lanzamiento", detail: "Borrador operativo", views: "842", status: "Borrador" }
     ].map((row) => `
       <article class="epk-row">
         <i>${row.icon}</i>
@@ -215,10 +262,10 @@ function renderDashboard() {
   const feed = $("#activityFeed");
   if (feed) {
     feed.innerHTML = [
-      ["⌄", "Agente de Reservas descargo activos de Press Kit.", "Berlin, DE - Ahora mismo"],
-      ["◎", "Universal Music vio el Tech Rider.", "Londres, UK - hace 12m"],
-      ["⌁", "EPK compartido en Instagram Stories.", "Nueva York, US - hace 1h"],
-      ["⌄", "Promotor de Festival descargo el Tech Rider.", "Ibiza, ES - hace 4h"]
+      ["DL", "Agente de Reservas descargo activos de Press Kit.", "Berlin, DE - Ahora mismo"],
+      ["ON", "Universal Music vio el Tech Rider.", "Londres, UK - hace 12m"],
+      ["SH", "EPK compartido en Instagram Stories.", "Nueva York, US - hace 1h"],
+      ["DL", "Promotor de Festival descargo el Tech Rider.", "Ibiza, ES - hace 4h"]
     ].map(([icon, title, detail]) => `<article class="activity-item"><span>${icon}</span><div><strong>${title}</strong><small>${detail}</small></div></article>`).join("");
   }
 }
@@ -226,11 +273,9 @@ function renderDashboard() {
 function renderReport() {
   const regions = $("#regionList");
   if (!regions) return;
-  [["01", "Estados Unidos", "32%"], ["02", "Alemania", "18%"], ["03", "Reino Unido", "14%"], ["04", "Paises Bajos", "11%"], ["05", "Brasil", "9%"]]
-    .forEach(([num, name, value], index) => {
-      if (index === 0) regions.innerHTML = "";
-      regions.insertAdjacentHTML("beforeend", `<div class="region-row"><strong>${num}</strong><span>${name}</span><b>${value}</b></div>`);
-    });
+  regions.innerHTML = [["01", "Estados Unidos", "32%"], ["02", "Alemania", "18%"], ["03", "Reino Unido", "14%"], ["04", "Paises Bajos", "11%"], ["05", "Brasil", "9%"]]
+    .map(([num, name, value]) => `<div class="region-row"><strong>${num}</strong><span>${name}</span><b>${value}</b></div>`)
+    .join("");
 }
 
 function renderProgress() {
@@ -279,16 +324,8 @@ function printActive() {
 
 function label(key) {
   return {
-    rider: "rider",
-    gallery: "foto",
-    videos: "video",
-    discography: "discografia",
-    events: "evento",
-    customSections: "seccion",
-    instagram: "Instagram",
-    spotify: "Spotify",
-    soundcloud: "SoundCloud",
-    youtube: "YouTube"
+    rider: "rider", gallery: "foto", videos: "video", discography: "discografia", events: "evento", customSections: "seccion",
+    instagram: "Instagram", spotify: "Spotify", soundcloud: "SoundCloud", youtube: "YouTube"
   }[key] || key;
 }
 
@@ -301,6 +338,17 @@ function escapeAttr(value) {
 }
 
 document.addEventListener("click", (event) => {
+  const langButton = event.target.closest("[data-lang]");
+  if (langButton) {
+    state.lang = langButton.dataset.lang;
+    persistQuietly();
+    applyLanguage();
+    $(".locale-picker")?.classList.remove("open");
+    $(".locale-btn")?.setAttribute("aria-expanded", "false");
+    showToast(`Idioma cambiado: ${langButton.textContent}`);
+    return;
+  }
+
   const nav = event.target.closest("[data-nav]");
   if (nav) navigate(nav.dataset.nav);
 
@@ -315,6 +363,11 @@ document.addEventListener("click", (event) => {
 
   const action = event.target.closest("[data-action]")?.dataset.action;
   if (!action) return;
+  if (action === "toggle-locale") {
+    const picker = $(".locale-picker");
+    const isOpen = picker?.classList.toggle("open");
+    $(".locale-btn")?.setAttribute("aria-expanded", String(Boolean(isOpen)));
+  }
   if (action === "menu") $(".mobile-menu")?.classList.toggle("open");
   if (action === "print") printActive();
   if (action === "save") {
@@ -325,7 +378,6 @@ document.addEventListener("click", (event) => {
   if (action === "new-epk") newEpk();
   if (action === "settings") showToast("Ajustes abiertos: edita el perfil desde la seccion Editor");
   if (action === "notify") showToast("Sin notificaciones pendientes. Sistema online.");
-  if (action === "toggle-locale") showToast("Idioma activo: Espanol");
   if (action === "help") showToast("Soporte: revisa contacto profesional en Media");
   if (action === "signout") showToast("Sesion local cerrada. Los datos siguen guardados en este navegador.");
   if (action === "close-dialog") $("#itemDialog")?.close();
@@ -335,6 +387,13 @@ document.addEventListener("click", (event) => {
     showToast("Analiticas actualizadas");
   }
   if (action === "edit-all") navigate("media");
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".locale-picker")) {
+    $(".locale-picker")?.classList.remove("open");
+    $(".locale-btn")?.setAttribute("aria-expanded", "false");
+  }
 });
 
 $("#itemForm")?.addEventListener("submit", (event) => {

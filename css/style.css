@@ -19,11 +19,6 @@
   --body: "Hanken Grotesk", system-ui, sans-serif;
   --mono: "JetBrains Mono", monospace;
   --shadow: 0 0 60px rgba(0,0,0,.65);
-  --img-cover-dj: url("https://lh3.googleusercontent.com/aida/AP1WRLu7U6zqEwq0Tm6y4TDAGYBvvRMBK8M5-vK-RH901rg9utHJkUjdE4fBHftXXldYBldjc61_8EnE0iqhtuZvXufUwEkACSSTBnKk8xAmXlVz9KLfevizW9eu581cxY_awB0K4u5vAHBEwuk-nmpyBtM5iGjoBKNw82JrqmpEUb829o53goJfTAPKjIPDVASvHCfgDSEu_wZFSnZfoR0zoRPmCX688ecmheTLN6xZycd_NVqRxEvXSBGx1qs");
-  --img-mixer: url("https://lh3.googleusercontent.com/aida/AP1WRLteijWfUusdz2rbglqT-4XiEnSLkUBy-Gimk9qK6wwqo6ku2P-QZ7Deo9EorBuFfiamR5kArd1P7kK3oVdmgod_4qrIwOrRxVCWQ7kvAe8v9-H5lVTF6d2AagqdNSAQhh16oFUBNYg8lCStcY3x79qgwziPlXhRsOX9YnViwllsYD_JsRPDXB5tcySIikNOSMbWoZwqCFN0aTgMQ4ug1Tadx6lPp0HMdM_MyVx9XuIWb5UPKEswUYXGrvg");
-  --img-performance: url("https://lh3.googleusercontent.com/aida/AP1WRLvwo47xueEhnh2GHo8AK3Svy_iQiKIckwRBNJ-wDiYtHpnJsS9-ctI3OcUhMwvZqj_KwFCLvjkj5P9jLrmdA0c8duI5s6fxrqgrjTLxlQeIiR2T9tCdR7foQnbD89Bhkz14fj_NHxoOp8rqf7PCqk-EkKrf7nf3QQIMfcsUGJOrDMB7NyCtUTp_MZDlfmxqYMsOeoMe7pKDUZhDBgdQavPpK07Wfms-avuB5VowweWxws70mv1yJZV9f9s");
-  --img-growth: url("https://lh3.googleusercontent.com/aida/AP1WRLvyWstwHAPr06Fj_DU_6HTGlGGK6FdotTpCWlucFnQ312nbcdWw0bdobQsonGIfNj_HIjGYoanMS5OPJWlvkarXC_fMfxMtbBNY0ivXMe3-zEaQrYWM5UG1rwXMPGYpnbDnFEA4pgtPXNG_kpPNNwpWRjksAz6zDtGyFw46ZbIHU9bxNXWBLFUxEMO_MmhFBDDRmInuKUDTrNtsHq1IMGStBDL1_dZegZyNIzQZOkn0LBa_-WCe-hisA4I");
-  --img-map: url("https://lh3.googleusercontent.com/aida/AP1WRLt6Pvd4_VgL1T5A6_Krpj4S3q4HR8PkW0Poewct2VQP7ukPxlP1mG1ONlxeM-enStcw_MC8F_CakFjxnrKx8QHkWjDv_cUkNeC2q5myP6z6L68TIx_BUdIR2jek8FOdN9fRrw59B9sXBwDlTlCPe9OBp5zj85Pd885Aq21KaoiziPUaaYzVU5ZYz17GcsCNBxK1lSQH37rzqC3lGHBec6Z69CQMwDsMpkKlMXPy2ZOn8UEMTLmCAeXxzw");
 }
 
 * { box-sizing: border-box; }
@@ -92,6 +87,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: none;
 }
 .small { padding: 10px 16px; }
+.locale-picker { position: relative; }
 .locale-btn, .icon-btn, .menu-btn {
   min-width: 38px;
   height: 38px;
@@ -102,6 +98,31 @@ a { color: inherit; text-decoration: none; }
 }
 .icon-btn { font-size: 21px; }
 .icon-btn:hover, .locale-btn:hover { color: var(--primary); }
+.locale-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 80;
+  display: none;
+  min-width: 168px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(19,11,22,.96);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(22px);
+}
+.locale-picker.open .locale-menu { display: grid; gap: 4px; }
+.locale-menu button {
+  border: 0;
+  border-radius: 7px;
+  padding: 10px 12px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+  font: 700 12px var(--mono);
+}
+.locale-menu button:hover, .locale-menu button.active { background: rgba(236,178,255,.12); color: var(--primary); }
 .menu-btn { display: none; position: relative; border: 1px solid var(--line); border-radius: 8px; }
 .menu-btn span, .menu-btn::before, .menu-btn::after {
   content: "";
@@ -156,6 +177,7 @@ a { color: inherit; text-decoration: none; }
   text-align: left;
   font-weight: 800;
 }
+.side-rail b { font: inherit; }
 .side-rail button:hover, .side-rail button.active { background: rgba(189,0,255,.32); border-color: var(--primary); color: #fff; }
 .side-rail button span { width: 22px; text-align: center; color: currentColor; }
 .rail-new {
@@ -178,7 +200,7 @@ a { color: inherit; text-decoration: none; }
   min-height: 1123px;
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: var(--paper);
   box-shadow: var(--shadow);
 }
@@ -203,12 +225,15 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 
-.cover-page { display: flex; min-height: 1123px; flex-direction: column; background: #150b17; }
+.cover-page { display: flex; min-height: 1123px; flex-direction: column; background: #150b17; overflow: hidden; }
 .hero-image, .hero-uploader, .preview-hero {
   background:
     linear-gradient(90deg, rgba(19,11,22,.95) 0 22%, rgba(19,11,22,.55) 48%, rgba(19,11,22,.2)),
     linear-gradient(0deg, #150b17 0 10%, transparent 42%),
-    var(--img-cover-dj),
+    radial-gradient(circle at 73% 22%, rgba(255,255,255,.55) 0 4%, transparent 5%),
+    radial-gradient(circle at 52% 42%, rgba(255,255,255,.18) 0 12%, transparent 13%),
+    linear-gradient(115deg, #060606 0 30%, #252126 45%, #777 64%, #151016 82%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 2px, transparent 2px 86px),
     #111;
   background-size: cover;
   background-position: center;
@@ -218,7 +243,9 @@ a { color: inherit; text-decoration: none; }
   background:
     linear-gradient(0deg, rgba(0,0,0,.82), transparent 70%),
     linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.6)),
-    var(--img-mixer),
+    radial-gradient(ellipse at 48% 46%, rgba(255,255,255,.28), transparent 18%),
+    linear-gradient(10deg, transparent 38%, rgba(255,255,255,.12) 39% 42%, transparent 43%),
+    repeating-linear-gradient(0deg, #101010 0 12px, #191919 12px 16px),
     #111;
   background-size: cover;
   background-position: center;
@@ -227,7 +254,10 @@ a { color: inherit; text-decoration: none; }
   background:
     linear-gradient(90deg, rgba(19,11,22,.9), rgba(19,11,22,.35)),
     linear-gradient(0deg, #150b17 0 10%, transparent 48%),
-    var(--img-cover-dj),
+    radial-gradient(circle at 73% 22%, rgba(255,255,255,.55) 0 4%, transparent 5%),
+    radial-gradient(circle at 52% 42%, rgba(255,255,255,.18) 0 12%, transparent 13%),
+    linear-gradient(115deg, #060606 0 30%, #252126 45%, #777 64%, #151016 82%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 2px, transparent 2px 86px),
     #111;
   background-size: cover;
   background-position: center;
@@ -342,7 +372,9 @@ h3 { margin: 0 0 18px; font: 800 24px var(--display); }
   padding: 22px;
   background:
     linear-gradient(0deg, rgba(0,0,0,.85), transparent 60%),
-    var(--img-performance),
+    radial-gradient(circle at 50% 0, rgba(255,255,255,.9), transparent 16%),
+    repeating-conic-gradient(from 0deg at 50% 16%, rgba(255,255,255,.22) 0 5deg, transparent 5deg 14deg),
+    linear-gradient(180deg, #202020, #060606),
     #090909;
   background-size: cover;
   background-position: center;
@@ -429,8 +461,10 @@ input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3p
   height: 312px;
   padding: 18px;
   background:
-    linear-gradient(0deg, rgba(17,22,33,.08), rgba(17,22,33,.08)),
-    var(--img-growth),
+    radial-gradient(circle at 22% 24%, rgba(125,244,255,.22), transparent 15%),
+    radial-gradient(circle at 74% 62%, rgba(236,178,255,.2), transparent 18%),
+    linear-gradient(135deg, rgba(189,0,255,.22), rgba(0,238,252,.1)),
+    repeating-linear-gradient(90deg, rgba(125,244,255,.08) 0 1px, transparent 1px 54px),
     #111621;
   background-size: cover;
   background-position: center;
@@ -445,8 +479,11 @@ input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3p
   min-height: 330px;
   padding: 22px;
   background:
-    linear-gradient(0deg, rgba(19,11,22,.18), rgba(19,11,22,.18)),
-    var(--img-map),
+    radial-gradient(circle at 18% 58%, rgba(0,238,252,.58) 0 3px, transparent 4px),
+    radial-gradient(circle at 48% 44%, rgba(0,238,252,.58) 0 3px, transparent 4px),
+    radial-gradient(circle at 70% 52%, rgba(0,238,252,.58) 0 3px, transparent 4px),
+    radial-gradient(circle at 86% 68%, rgba(0,238,252,.58) 0 3px, transparent 4px),
+    linear-gradient(20deg, transparent 20%, rgba(125,244,255,.18) 21% 22%, transparent 23%),
     linear-gradient(145deg, rgba(189,0,255,.2), rgba(0,238,252,.08));
   background-size: cover;
   background-position: center;
@@ -504,7 +541,7 @@ input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3p
 @media (max-width: 760px) {
   .topbar { height: 66px; grid-template-columns: 1fr auto; padding: 0 14px; }
   .brand-btn { font-size: 19px; }
-  .topnav, .locale-btn, .icon-btn { display: none; }
+  .topnav, .locale-picker, .icon-btn { display: none; }
   .menu-btn { display: inline-block; }
   .mobile-menu { top: 66px; }
   .side-rail { display: none; }
